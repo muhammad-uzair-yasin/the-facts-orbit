@@ -2,141 +2,199 @@
 [
 "Three tricks people use to make you say yes...",
 0.08,
-2.226
+2.226,
+"host"
 ],
 [
 "and how to spot them.",
 2.646,
-3.715
+3.715,
+"host"
 ],
 [
 "One.",
 4.265,
-4.726
+4.726,
+"host"
 ],
 [
 "The foot in the door.",
 5.026,
-6.122
+6.122,
+"host"
+],
+[
+"Could you do me a tiny favor?",
+6.722,
+8.286,
+"guest"
 ],
 [
 "In 1966, researchers asked homeowners to put a big, ugly \"Drive Carefully\" sign on their lawn.",
-6.422,
-12.598
+8.886,
+15.061,
+"host"
 ],
 [
 "Only seventeen percent agreed.",
-12.898,
-14.554
+15.361,
+17.017,
+"host"
 ],
 [
 "But people who had first agreed to a tiny window sign?",
-14.854,
-17.571
+17.317,
+20.035,
+"host"
 ],
 [
 "Seventy-six percent said yes.",
-17.871,
-19.464
+20.335,
+21.928,
+"host"
 ],
 [
 "Small yes first.",
-19.764,
-20.89
+22.228,
+23.353,
+"host"
 ],
 [
 "Big yes later.",
-21.19,
-22.12
+23.653,
+24.584,
+"host"
 ],
 [
 "Two.",
-22.67,
-23.167
+25.134,
+25.63,
+"host"
 ],
 [
 "The door in the face.",
-23.467,
-24.611
+25.93,
+27.075,
+"host"
 ],
 [
 "Ask for something huge, get rejected...",
-24.911,
-26.983
+27.375,
+29.447,
+"host"
 ],
 [
 "then ask for what you really wanted.",
-27.403,
-29.135
+29.867,
+31.598,
+"host"
+],
+[
+"Okay, okay...",
+32.198,
+33.131,
+"guest"
+],
+[
+"then how about just this?",
+33.551,
+34.964,
+"guest"
 ],
 [
 "In 1975, students were asked to take a group of kids to the zoo.",
-29.435,
-33.562
+35.564,
+39.692,
+"host"
 ],
 [
 "Asked on its own, seventeen percent agreed.",
-33.862,
-36.108
+39.992,
+42.237,
+"host"
 ],
 [
 "But after first refusing a two-year volunteer job...",
-36.408,
-39.254
+42.537,
+45.384,
+"host"
 ],
 [
 "fifty percent said yes.",
-39.674,
-41.042
+45.804,
+47.172,
+"host"
 ],
 [
 "Three.",
-41.592,
-42.133
+47.722,
+48.262,
+"host"
 ],
 [
 "The free gift.",
-42.433,
-43.312
+48.562,
+49.442,
+"host"
+],
+[
+"Here, have a free soda.",
+50.042,
+51.279,
+"guest"
+],
+[
+"No strings attached.",
+51.579,
+52.831,
+"guest"
 ],
 [
 "In a 1971 study, people who got a free soda from a stranger later bought about twice as many raffle tickets from him.",
-43.612,
-50.515
+53.431,
+60.334,
+"host"
 ],
 [
 "A small gift...",
-50.815,
-51.723
+60.634,
+61.541,
+"host"
 ],
 [
 "creates a big feeling of debt.",
-52.143,
-53.721
+61.961,
+63.54,
+"host"
 ],
 [
 "So when someone asks for a little, then a lot...",
-54.271,
-56.431
+64.09,
+66.25,
+"host"
 ],
 [
 "or hands you something free...",
-56.851,
-58.214
+66.67,
+68.033,
+"host"
 ],
 [
 "pause.",
-58.634,
-59.172
+68.453,
+68.991,
+"host"
 ],
 [
 "And ask yourself: is this really my choice?",
-59.472,
-61.741
+69.291,
+71.559,
+"host"
 ],
 [
 "Subscribe for a new fact every single day.",
-62.291,
-64.502
+72.109,
+74.321,
+"host"
 ]
 ]

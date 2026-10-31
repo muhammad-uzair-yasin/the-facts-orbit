@@ -14,7 +14,7 @@ export const eio = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t
 export const eout = (t: number) => 1 - Math.pow(1 - t, 3);
 export const eback = (t: number) => { const c1 = 1.7, c3 = c1 + 1; return t >= 1 ? 1 : 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
 export const rnd = (s: string) => random(s);
-const hex = (c: string) => [parseInt(c.slice(1, 3), 16), parseInt(c.slice(3, 5), 16), parseInt(c.slice(5, 7), 16)];
+const hex = (c: string) => { const h = c.length === 4 ? "#" + c[1] + c[1] + c[2] + c[2] + c[3] + c[3] : c; return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]; };
 export const mix = (a: string, b: string, t: number) => {
   const A = hex(a), B = hex(b), k = clamp01(t);
   return "#" + A.map((v, i) => Math.round(lerp(v, B[i], k)).toString(16).padStart(2, "0")).join("");

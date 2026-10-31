@@ -35,7 +35,8 @@ def main():
 
     W, CH = [], []
     wi = 0
-    for s, t0, t1 in sents:
+    for row in sents:
+        s, t0, t1 = row[0], row[1], row[2]
         toks = s.split()
         cw = [len(t) + 1 for t in toks]
         ct = sum(cw)
@@ -86,11 +87,14 @@ def main():
     lines.append(f"export const VOICE_END = {end};")
     lines.append(f"export const TOTAL = {end + tail};")
     lines.append("export const ENV: number[] = [" + ",".join(str(round(e, 3)) for e in sm) + "];")
+    spk = [f'[{15 + round(r[1] * 30)}, {15 + round(r[2] * 30)}, "{r[3] if len(r) > 3 else "host"}"]' for r in sents]
+    lines.append("/** phrase windows per speaker: [startFrame, endFrame, speaker] */")
+    lines.append("export const SPK: [number, number, string][] = [" + ", ".join(spk) + "];")
     open(out_path, "w").write("\n".join(lines) + "\n")
     print(f"words {len(W)}  chunks {len(CH)}  voice_end {end}  total {end + tail}  env {len(sm)}")
     print("cue table (frame : phrase):")
-    for s, t0, _ in sents:
-        print(f"  {15 + round(t0 * 30):5d} : {s[:60]}")
+    for row in sents:
+        print(f"  {15 + round(row[1] * 30):5d} : {(row[3] + ': ') if len(row) > 3 else ''}{row[0][:60]}")
 
 if __name__ == "__main__":
     main()

@@ -2,111 +2,139 @@
 [
 "Nobody is looking at you...",
 0.08,
-1.395
+1.395,
+"host"
 ],
 [
 "as much as you think.",
 1.815,
-2.884
+2.884,
+"host"
 ],
 [
 "In 2000, psychologists at Cornell had students put on a t-shirt with a giant face of a singer most of them found deeply embarrassing.",
 3.434,
-11.31
+11.31,
+"host"
 ],
 [
 "Then they walked into a room full of people.",
 11.61,
-13.46
+13.46,
+"host"
+],
+[
+"Everyone is staring at my shirt...",
+14.06,
+15.695,
+"guest"
 ],
 [
 "Afterward, the students guessed how many people noticed the shirt.",
-14.011,
-16.984
+16.295,
+19.269,
+"host"
 ],
 [
 "Their guess...",
-17.284,
-17.903
+19.569,
+20.188,
+"host"
 ],
 [
 "about half the room.",
-18.323,
-19.377
+20.608,
+21.662,
+"host"
 ],
 [
 "The real number?",
-19.927,
-20.795
+22.212,
+23.08,
+"host"
 ],
 [
 "About a quarter.",
-21.095,
-21.947
+23.38,
+24.231,
+"host"
 ],
 [
 "They believed twice as many people noticed...",
-22.497,
-24.743
+24.781,
+27.028,
+"host"
 ],
 [
 "as actually did.",
-25.163,
-26.212
+27.448,
+28.496,
+"host"
 ],
 [
 "It's called the spotlight effect.",
-26.762,
-28.221
+29.046,
+30.506,
+"host"
 ],
 [
 "You're the center of your own world...",
-28.521,
-30.026
+30.806,
+32.31,
+"host"
 ],
 [
 "so you assume you're the center of everyone else's too.",
-30.446,
-32.855
+32.73,
+35.14,
+"host"
 ],
 [
 "But everyone else is busy...",
-33.155,
-34.543
+35.44,
+36.828,
+"host"
 ],
 [
 "worrying about their own shirt.",
-34.963,
-36.433
+37.248,
+38.718,
+"host"
 ],
 [
 "That bad hair day.",
-36.983,
-38.067
+39.268,
+40.352,
+"host"
 ],
 [
 "That mistake in the meeting.",
-38.367,
-39.666
+40.652,
+41.951,
+"host"
 ],
 [
 "Almost nobody remembers.",
-39.966,
-41.518
+42.251,
+43.803,
+"host"
 ],
 [
 "So go ahead.",
-42.068,
-42.941
+44.353,
+45.226,
+"host"
 ],
 [
 "Do the thing.",
-43.241,
-43.964
+45.526,
+46.249,
+"host"
 ],
 [
 "Subscribe for a new fact every single day.",
-44.514,
-46.726
+46.799,
+49.01,
+"host"
 ]
 ]

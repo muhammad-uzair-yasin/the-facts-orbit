@@ -1,4 +1,4 @@
-engine/node_modules/
+engine/node_modules
 engine/public/projects/
 engine/src/build/
 episodes/*/render.mp4
@@ -8,3 +8,4 @@ episodes/*/still_*.png
 .DS_Store
 engine/tts/*.onnx
 engine/tts/*.bin
+engine/src/build_*/

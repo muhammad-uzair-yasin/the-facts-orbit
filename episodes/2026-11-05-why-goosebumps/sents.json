@@ -1,102 +1,128 @@
 [
 [
-"Why do you get goosebumps?",
+"Why do I get goosebumps?",
 0.08,
-1.415
+1.201,
+"kid"
 ],
 [
 "Every hair on your body has a tiny muscle attached to it.",
-1.965,
-4.928
+1.801,
+4.764,
+"host"
 ],
 [
 "When you're cold or scared, your nerves fire...",
-5.228,
-7.421
+5.064,
+7.257,
+"host"
 ],
 [
 "those muscles tighten...",
-7.841,
-9.186
+7.677,
+9.022,
+"host"
 ],
 [
 "and every hair stands up.",
-9.606,
-10.989
+9.442,
+10.825,
+"host"
 ],
 [
 "That's a goosebump.",
-11.289,
-12.296
+11.125,
+12.132,
+"host"
 ],
 [
 "For our furry ancestors, this was a superpower.",
-12.846,
-15.379
+12.682,
+15.215,
+"host"
 ],
 [
 "Raised fur traps warm air...",
-15.679,
-17.246
+15.515,
+17.082,
+"host"
 ],
 [
 "and makes an animal look bigger to scare off enemies.",
-17.666,
-20.32
+17.502,
+20.155,
+"host"
 ],
 [
 "Watch an angry cat puff up.",
-20.62,
-22.232
+20.455,
+22.068,
+"host"
 ],
 [
 "Same reflex.",
-22.532,
-23.571
+22.368,
+23.407,
+"host"
 ],
 [
 "We lost the fur...",
-24.121,
-25.123
+23.957,
+24.959,
+"host"
 ],
 [
 "but kept the reflex.",
-25.543,
-26.758
+25.379,
+26.593,
+"host"
 ],
 [
 "That's why a scary movie, or a song you love, can still make your skin prickle.",
-27.058,
-30.93
+26.893,
+30.766,
+"host"
 ],
 [
-"But in 2020, Harvard scientists found that goosebumps still have a job.",
-31.48,
-36.098
+"So goosebumps are useless?",
+31.366,
+32.631,
+"kid"
 ],
 [
-"The same nerve that raises the hair also wakes up the stem cells that grow new hair.",
-36.398,
-41.125
+"Not quite.",
+33.231,
+34.003,
+"host"
+],
+[
+"In 2020, Harvard scientists found that the same nerve that raises the hair also wakes up the stem cells that grow new hair.",
+34.303,
+42.33,
+"host"
 ],
 [
 "In mice kept in the cold, new hair started growing in less than two weeks.",
-41.425,
-45.415
+42.63,
+46.62,
+"host"
 ],
 [
 "So goosebumps aren't useless leftovers...",
-45.965,
-48.1
+47.17,
+49.305,
+"host"
 ],
 [
 "they're your body, still trying to keep you warm.",
-48.52,
-50.812
+49.725,
+52.018,
+"host"
 ],
 [
 "Subscribe for a new fact every single day.",
-51.362,
-53.738
+52.568,
+54.943,
+"host"
 ]
 ]

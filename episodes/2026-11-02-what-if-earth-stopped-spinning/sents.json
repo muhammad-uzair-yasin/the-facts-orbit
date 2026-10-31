@@ -2,126 +2,157 @@
 [
 "What if Earth suddenly stopped spinning?",
 0.08,
-1.759
+1.892,
+"kid"
 ],
 [
 "If you live near the equator, you're moving at about one thousand six hundred and seventy kilometers per hour.",
-2.309,
-7.881
+2.492,
+8.063,
+"host"
 ],
 [
 "Right now.",
-8.181,
-8.864
+8.363,
+9.046,
+"host"
 ],
 [
 "You just can't feel it, because everything moves with you.",
-9.164,
-11.663
+9.346,
+11.845,
+"host"
 ],
 [
 "The air.",
-11.963,
-12.546
+12.145,
+12.728,
+"host"
 ],
 [
 "The oceans.",
-12.846,
-13.617
+13.028,
+13.799,
+"host"
 ],
 [
 "The ground.",
-13.917,
-14.598
+14.099,
+14.78,
+"host"
 ],
 [
 "Now stop the planet...",
-15.148,
-16.292
+15.33,
+16.474,
+"host"
 ],
 [
 "but not the things on it.",
-16.712,
-17.889
+16.894,
+18.071,
+"host"
 ],
 [
 "Everything not bolted to bedrock keeps flying east at that speed.",
-18.439,
-21.821
+18.621,
+22.003,
+"host"
 ],
 [
 "People, cars, buildings, trees.",
-22.121,
-23.803
+22.303,
+23.985,
+"host"
 ],
 [
 "The atmosphere becomes a wind faster than any hurricane in history...",
-24.103,
-27.706
+24.285,
+27.888,
+"host"
 ],
 [
 "scraping the surface clean.",
-28.126,
-29.53
+28.308,
+29.712,
+"host"
 ],
 [
 "Then the oceans move.",
-30.08,
-31.23
+30.262,
+31.412,
+"host"
 ],
 [
 "Earth's spin makes it bulge at the middle.",
-31.53,
-33.349
+31.712,
+33.532,
+"host"
 ],
 [
 "Without the spin, the water slides toward the poles...",
-33.649,
-36.194
+33.832,
+36.376,
+"host"
 ],
 [
 "leaving one giant continent wrapped around the equator.",
-36.614,
-39.378
+36.796,
+39.561,
+"host"
 ],
 [
 "And one day would last...",
-39.928,
-41.097
+40.111,
+41.279,
+"host"
 ],
 [
 "a whole year.",
-41.517,
-42.309
+41.699,
+42.491,
+"host"
 ],
 [
 "Six months of daylight.",
-42.609,
-43.893
+42.791,
+44.075,
+"host"
 ],
 [
 "Six months of night.",
-44.193,
-45.259
+44.375,
+45.441,
+"host"
 ],
 [
-"The good news?",
-45.809,
-46.668
+"So...",
+46.041,
+46.584,
+"kid"
+],
+[
+"are we in danger?",
+47.004,
+48.184,
+"kid"
 ],
 [
 "Earth's spin is slowing by only about two milliseconds per century.",
-46.968,
-50.221
+48.784,
+52.037,
+"host"
 ],
 [
 "We're fine.",
-50.521,
-51.255
+52.337,
+53.071,
+"host"
 ],
 [
 "Subscribe for a new fact every single day.",
-51.805,
-54.016
+53.621,
+55.832,
+"host"
 ]
 ]

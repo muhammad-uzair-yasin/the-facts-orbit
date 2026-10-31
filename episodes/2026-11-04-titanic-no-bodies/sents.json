@@ -2,96 +2,115 @@
 [
 "Why were no bodies ever found at the Titanic?",
 0.08,
-2.439
+2.439,
+"host"
 ],
 [
 "The Titanic sank in 1912.",
-2.989,
-5.166
+3.039,
+6.095,
+"guest"
 ],
 [
 "More than fifteen hundred people died.",
-5.466,
-7.332
+6.395,
+8.631,
+"guest"
 ],
 [
 "When the wreck was finally found in 1985...",
-7.632,
-10.571
+9.231,
+12.169,
+"host"
 ],
 [
 "nearly four kilometers deep...",
-10.991,
-12.575
+12.589,
+14.174,
+"host"
 ],
 [
 "explorers saw shoes, coats, and belongings.",
-12.995,
-15.208
+14.594,
+16.807,
+"host"
 ],
 [
 "But no bones.",
-15.508,
-16.444
+17.107,
+18.043,
+"host"
 ],
 [
 "Not one.",
-16.744,
-17.43
+18.343,
+19.028,
+"host"
 ],
 [
 "Here's why.",
-17.98,
-18.728
+19.578,
+20.327,
+"host"
 ],
 [
 "At that depth, sea creatures eat everything soft.",
-19.028,
-21.382
+20.627,
+22.98,
+"host"
 ],
 [
 "Then the water itself takes over.",
-21.682,
-23.276
+23.28,
+24.874,
+"host"
 ],
 [
 "According to Robert Ballard, the man who found the Titanic, the deep ocean lacks the minerals that keep bones intact...",
-23.576,
-30.067
+25.174,
+31.665,
+"host"
 ],
 [
 "so exposed bones slowly dissolve away.",
-30.487,
-32.789
+32.085,
+34.388,
+"host"
 ],
 [
 "But the victims left one heartbreaking clue.",
-33.339,
-35.571
+34.938,
+37.17,
+"host"
 ],
 [
 "Across the sea floor, shoes lie in pairs...",
-35.871,
-37.886
+37.47,
+39.485,
+"host"
 ],
 [
 "side by side.",
-38.306,
-39.305
+39.905,
+40.904,
+"host"
 ],
 [
 "Their tanned leather resists decay.",
-39.605,
-41.394
+41.204,
+42.993,
+"host"
 ],
 [
 "Each pair marks the place where a person once came to rest.",
-41.694,
-44.427
+43.293,
+46.026,
+"host"
 ],
 [
 "Subscribe for a new fact every single day.",
-44.977,
-47.189
+46.576,
+48.787,
+"host"
 ]
 ]

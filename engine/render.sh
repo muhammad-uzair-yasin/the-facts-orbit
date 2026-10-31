@@ -24,8 +24,9 @@ mkdir -p "public/projects/$SLUG"
 ffmpeg -y -v error -i "$EP/narration.mp3" -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 "public/projects/$SLUG/narration.wav"
 if [[ -d "$EP/extra" ]]; then for f in "$EP"/extra/*.mp3; do ffmpeg -y -v error -i "$f" -ar 48000 "public/projects/$SLUG/$(basename "${f%.mp3}").wav"; done; fi
 
-rm -rf src/build && mkdir -p src/build
-cp src/*.tsx "$EP/Film.tsx" "$EP/entry.tsx" "$EP/words.ts" src/build/
+B="src/build_$SLUG"
+rm -rf "$B" && mkdir -p "$B"
+cp src/*.tsx "$EP/Film.tsx" "$EP/entry.tsx" "$EP/words.ts" "$B/"
 
 # Chrome: Remotion downloads its own on a normal machine. In the Claude cloud workspace the download is
 # blocked, so point it at the pre-installed Playwright chromium.
@@ -34,9 +35,9 @@ if [[ -n "${REMOTION_CHROME:-}" ]]; then CHROME_ARG=(--browser-executable="$REMO
 else for c in /opt/pw-browsers/chromium-*/chrome-linux64/chrome; do [[ -x "$c" ]] && CHROME_ARG=(--browser-executable="$c") && break; done; fi
 
 if [[ $MODE == still ]]; then
-  npx remotion still src/build/entry.tsx "$COMP" "$OUT" --frame="$FRAME" "${CHROME_ARG[@]}" --log=error
+  npx remotion still "$B/entry.tsx" "$COMP" "$OUT" --frame="$FRAME" "${CHROME_ARG[@]}" --log=error
 else
-  npx remotion render src/build/entry.tsx "$COMP" "$OUT" "${CHROME_ARG[@]}" --concurrency=2 --log=error
+  npx remotion render "$B/entry.tsx" "$COMP" "$OUT" "${CHROME_ARG[@]}" --concurrency=${RENDER_CONCURRENCY:-2} --log=error
   # master: -14 LUFS integrated, true peak <= -1.5 dBTP (YouTube/TikTok targets)
   ffmpeg -y -v error -i "$OUT" -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k "${OUT%.mp4}_m.mp4" && mv "${OUT%.mp4}_m.mp4" "$OUT"
   ffmpeg -y -v error -i "$OUT" -vf "select='not(mod(n\,150))',scale=270:-1,tile=6x3" -frames:v 1 "${OUT%.mp4}_sheet.jpg" || true

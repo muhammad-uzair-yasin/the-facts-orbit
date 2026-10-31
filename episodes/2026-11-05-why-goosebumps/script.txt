@@ -1,13 +1,15 @@
-Why do you get goosebumps?
+[am_puck:kid] Why do I get goosebumps?
 
-Every hair on your body has a tiny muscle attached to it. When you're cold or scared, your nerves fire... those muscles tighten... and every hair stands up. That's a goosebump.
+[am_adam:host] Every hair on your body has a tiny muscle attached to it. When you're cold or scared, your nerves fire... those muscles tighten... and every hair stands up. That's a goosebump.
 
-For our furry ancestors, this was a superpower. Raised fur traps warm air... and makes an animal look bigger to scare off enemies. Watch an angry cat puff up. Same reflex.
+[am_adam:host] For our furry ancestors, this was a superpower. Raised fur traps warm air... and makes an animal look bigger to scare off enemies. Watch an angry cat puff up. Same reflex.
 
-We lost the fur... but kept the reflex. That's why a scary movie, or a song you love, can still make your skin prickle.
+[am_adam:host] We lost the fur... but kept the reflex. That's why a scary movie, or a song you love, can still make your skin prickle.
 
-But in 2020, Harvard scientists found that goosebumps still have a job. The same nerve that raises the hair also wakes up the stem cells that grow new hair. In mice kept in the cold, new hair started growing in less than two weeks.
+[am_puck:kid] So goosebumps are useless?
 
-So goosebumps aren't useless leftovers... they're your body, still trying to keep you warm.
+[am_adam:host] Not quite. In 2020, Harvard scientists found that the same nerve that raises the hair also wakes up the stem cells that grow new hair. In mice kept in the cold, new hair started growing in less than two weeks.
 
-Subscribe for a new fact every single day.
+[am_adam:host] So goosebumps aren't useless leftovers... they're your body, still trying to keep you warm.
+
+[am_adam:host] Subscribe for a new fact every single day.

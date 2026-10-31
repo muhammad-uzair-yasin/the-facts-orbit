@@ -261,3 +261,12 @@ export const Director: React.FC<{ f: number; shots: Shot[]; punches?: [number, n
 /** Whoosh cues for every transition (2 frames before the shot starts). */
 export const transitionCues = (shots: Shot[], vol = 0.42): Cue[] =>
   shots.filter((s, i) => i > 0 && s.tr && s.tr !== "cut").map((s) => [s.from - 2, s.tr === "flash" ? "impact" : "whoosh", vol] as Cue);
+
+// ---------- multi-speaker lip-sync ----------
+/** Mouth openness for ONE speaker: the voice envelope only while that speaker's phrase is playing. */
+export const talkFor = (f: number, who: string, SPK: [number, number, string][], ENV: number[]) => {
+  const active = SPK.some(([a, b, s]) => s === who && f >= a - 1 && f <= b + 2);
+  return active ? Math.max(0, ENV[Math.max(0, f - 15)] ?? 0) : 0;
+};
+/** Is this speaker talking now? (for look-at / gesture switching) */
+export const speaking = (f: number, who: string, SPK: [number, number, string][]) => SPK.some(([a, b, s]) => s === who && f >= a - 1 && f <= b + 2);

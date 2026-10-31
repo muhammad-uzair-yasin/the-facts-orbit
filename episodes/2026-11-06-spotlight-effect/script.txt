@@ -1,17 +1,19 @@
-Nobody is looking at you... as much as you think.
+[am_adam:host] Nobody is looking at you... as much as you think.
 
-In 2000, psychologists at Cornell had students put on a t-shirt with a giant face of a singer most of them found deeply embarrassing. Then they walked into a room full of people.
+[am_adam:host] In 2000, psychologists at Cornell had students put on a t-shirt with a giant face of a singer most of them found deeply embarrassing. Then they walked into a room full of people.
 
-Afterward, the students guessed how many people noticed the shirt. Their guess... about half the room.
+[am_eric:guest] Everyone is staring at my shirt...
 
-The real number? About a quarter.
+[am_adam:host] Afterward, the students guessed how many people noticed the shirt. Their guess... about half the room.
 
-They believed twice as many people noticed... as actually did.
+[am_adam:host] The real number? About a quarter.
 
-It's called the spotlight effect. You're the center of your own world... so you assume you're the center of everyone else's too. But everyone else is busy... worrying about their own shirt.
+[am_adam:host] They believed twice as many people noticed... as actually did.
 
-That bad hair day. That mistake in the meeting. Almost nobody remembers.
+[am_adam:host] It's called the spotlight effect. You're the center of your own world... so you assume you're the center of everyone else's too. But everyone else is busy... worrying about their own shirt.
 
-So go ahead. Do the thing.
+[am_adam:host] That bad hair day. That mistake in the meeting. Almost nobody remembers.
 
-Subscribe for a new fact every single day.
+[am_adam:host] So go ahead. Do the thing.
+
+[am_adam:host] Subscribe for a new fact every single day.
