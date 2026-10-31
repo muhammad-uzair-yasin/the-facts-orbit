@@ -54,8 +54,8 @@ const Pyramid: React.FC<{ x: number; base: number; w: number; built?: number; gl
 const Block: React.FC<{ x: number; y: number; s?: number; c?: string }> = ({ x, y, s = 1, c = STONE }) => (
   <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-60} y={-40} width={120} height={80} rx={6} fill={c} stroke={INK} strokeWidth={5} />
-    <path d="M-60 -40 L-44 -54 H76 L60 -40 Z" fill={mix(c, "#fff", 0.25)} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
-    <path d="M60 -40 L76 -54 V26 L60 40 Z" fill={mix(c, "#000", 0.2)} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M-60 -40 L-44 -54 H76 L60 -40 Z" fill={mix(c, "#ffffff", 0.25)} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M60 -40 L76 -54 V26 L60 40 Z" fill={mix(c, "#000000", 0.2)} stroke={INK} strokeWidth={5} strokeLinejoin="round" />
   </g>
 );
 const Hero: React.FC<{ f: number; x: number; y?: number; s?: number; facing?: 1 | -1; mood?: any; armR?: number; elbowR?: number; armL?: number; look?: [number, number]; walk?: number; hat?: boolean }> = (p) => (
