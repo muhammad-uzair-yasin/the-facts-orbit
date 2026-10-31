@@ -10,6 +10,7 @@ Part of a 4-channel network run by **Muhammad Uzair Yasin**, produced end-to-end
 |---|---|
 | `AGENTS.md` | **Start here** — handoff manual for any AI agent continuing the work |
 | `docs/content-plan.md` | What this channel publishes, why, the format, and the queue/plan |
+| `docs/characters.md` | **The cast: 50 default characters** + casting guide |
 | `docs/rules.md` | Standing rules and the reason behind each |
 | `docs/pipeline.md` | How a video is made, step by step, with commands |
 | `docs/posting.md` | Publishing via Postsiva (YouTube + 7 cross-post platforms) |
