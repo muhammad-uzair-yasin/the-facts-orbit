@@ -5,8 +5,7 @@ All publishing goes through **Postsiva** (Uzair's own social media platform), vi
 
 ## Flow
 1. `get_upload_link(media_type="video")` → returns an upload page URL (expires in ~15 min).
-2. **Uzair opens it in his browser and uploads the MP4**, then pastes back `media_id` + `public_url`.
-   *Why manual:* the agent's workspace can't reach `backend.postsiva.com` (egress proxy, CONNECT 403).
+2. **Upload with the curl command** from the tool result (`curl -X POST https://backend.postsiva.com/media/upload -H "X-Upload-Token: …" -F media=@file.mp4 -F media_type=video`) → returns `media_id`. One token can upload several files within its 15 min. (Uzair allowlisted the Postsiva domain on Nov 1, 2026; before that he uploaded by hand.)
 3. Post with `multi_execute_tool(tools=[{tool_slug, arguments}])` — note: the key is `tools`, not `tool_calls`.
    Tool discovery: `search_tools(queries=[{use_case, toolkits}])`. Action tools need Uzair's go-ahead.
 4. One `media_id` works for every platform tool — upload once, post everywhere.
@@ -46,3 +45,7 @@ More from me:
 
 #tags #shorts
 ```
+
+## Timing (Uzair, Nov 1 2026: maximise the US audience)
+Weekdays 4:00 PM ET = 21:00 UTC (EST, Nov–Mar) / 20:00 UTC (EDT, Mar–Nov). Weekends 12:00 PM ET = 17:00 UTC (EST) / 16:00 UTC (EDT).
+Reschedule with `YOUTUBE_MANAGE_SCHEDULED_POST {scheduled_post_id, channel_id, action:"reschedule", scheduled_time}`.
