@@ -1,6 +1,6 @@
 # The Cast — 50 characters (default characters for ALL videos)
 
-**Standing rule (Uzair, Oct 31 2026): prefer these characters when creating videos.** Pick a host + topic-fitting guests
+**Standing rule (Uzair, Oct 31 2026): prefer these characters when creating videos for Agentic Ai with Uzair, Ai News and The Facts Orbit** (not Learn AI With Uzair, which gets a 3D character). Pick a host + topic-fitting guests
 from this list; use the old stick figure only as a fallback. Preview: `engine/characters/cast_50.jpg`.
 
 Code: `engine/characters/Humans.tsx` → `<Person d={CAST[n-1]} f={f} seed={n} talk={ENV[f-15]} wave={0|1} mood="happy|neutral|surprised" />`
@@ -61,7 +61,7 @@ hat (14 incl. hijab/turban/helmet/crown), glasses, beard, prop, age (kid/adult/o
 | 50 | **Host Uzair-style** | jacket | — | laptop | network host — AI channels, intros |
 
 ## Suggested casting
-- **Learn AI With Uzair (Agent School):** host #50 Host Uzair-style or #5 Teacher; students #23 Student, #25 Hijabi Coder, #12 Gamer Kid.
+- **Learn AI With Uzair:** NOT this cast — that channel will use a more human-like 3D character (TBD, Uzair Oct 31).
 - **Agentic Ai with Uzair (tools):** #6 Hacker, #43 YouTuber, #34 Influencer, #19 Artist, #40 DJ.
 - **Ai News:** anchor #17 Reporter or #18 Business; guests by story (e.g. #6 Hacker for security, #3 Astronaut for space).
 - **The Facts Orbit:** host #2 Explorer or #36 Professor; guests by topic — #47 Diver (ocean/Titanic), #3 Astronaut (space), #4 Detective (psychology tricks), #1 Scientist (body/science), #46 Historian / #15 King (history).
