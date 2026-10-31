@@ -18,7 +18,7 @@ Hook = the fact/question itself → the setup → the twist/number acted out →
 **Cover frame:** first frame = one big yellow outlined keyword (MOON, BRAIN, SMOKE…) so the Shorts grid is clickable.
 
 ## Queue — week of Nov 1–7, 2026 (topics chosen by YouTube demand research, Oct 31)
-Narration: agent-generated, Kokoro voice af_nicole (see engine/tts/README.md). Schedule: 7:00 PM PKT (14:00 UTC) daily via Postsiva `scheduled_time`.
+Narration: agent-generated, Kokoro voice am_adam (see engine/tts/README.md). Schedule: 7:00 PM PKT (14:00 UTC) daily via Postsiva `scheduled_time`.
 
 ### Why these topics — demand research (Oct 31, YouTube search data via Uzair's desktop browser)
 Measured per topic: biggest video/Short (ceiling) and median Short (how a typical upload does).
