@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<title>Element Library</title>
+<style>
+@font-face{font-family:'Archivo Black';src:url('fonts/archivo-black-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Anton';src:url('fonts/anton-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:700;src:url('fonts/inter-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:800;src:url('fonts/inter-latin-800-normal.woff2') format('woff2')}
+
+:root{color-scheme:dark}
+body{margin:0;background:#05070e;color:#dfe6f5;font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;gap:14px;padding:20px max(16px,env(safe-area-inset-left,0px)) 40px}
+#stage{width:min(92vw,440px);height:auto;border-radius:18px;border:1px solid #1c2436}
+.bar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+button{background:#15203a;color:#dfe6f5;border:1px solid #2a3a5e;border-radius:12px;padding:10px 18px;font:700 15px Inter;cursor:pointer}
+button:focus-visible{outline:2px solid #3b82f6}
+h1{font:800 20px Inter;margin:6px 0 0}
+#lbl{font:700 14px Inter;color:#93c5fd}
+
+</style>
+<h1>Element Library — Learn AI With Uzair</h1><div id="lbl">loading…</div><canvas id="stage" width="1080" height="1920"></canvas><div class="bar"><button id="prev">◀ Prev</button><button id="auto">Pause</button><button id="next">Next ▶</button></div>
+<script src="libcore.js"></script>
+<script src="libels1.js"></script>
+<script src="libels2.js"></script>
+<script src="libels3.js"></script>
+<script src="libels4.js"></script>
+<script src="libels5.js"></script>
+<script src="libels6.js"></script>
+<script src="libels7.js"></script>
+<script src="libels8.js"></script>
+<script src="libels9.js"></script>
+<script>
+const stage=document.getElementById('stage');
+const off=document.createElement('canvas');off.width=W;off.height=H;
+const P=new URLSearchParams(location.search);
+function renderEl(el,t){ctx=off.getContext('2d');bgBase();try{el.fn(t);}catch(e){window.errs.push(el.label+': '+e.message);txt('ERR',CX,900,'80px Inter','#f00','center');}}
+window.errs=[];
+window.drawSheet=function(cat){const els=ELS.filter(e=>e.cat===cat);const cols=3,tw=320,th=569,gx=30,gy=104;
+ const rows=Math.ceil(els.length/cols);stage.width=W;stage.height=190+rows*(th+gy);
+ ctx=stage.getContext('2d');const g=ctx.createLinearGradient(0,0,0,stage.height);g.addColorStop(0,'#0c1428');g.addColorStop(1,'#05070e');ctx.fillStyle=g;ctx.fillRect(0,0,stage.width,stage.height);
+ txt(cat,30,100,'72px "Archivo Black"','#fff');txt(els.length+' elements',stage.width-30,100,'700 36px Inter','rgba(255,255,255,0.5)','right');
+ els.forEach((el,i)=>{renderEl(el,0.75);const cx2=30+(i%cols)*(tw+gx),cy2=170+Math.floor(i/cols)*(th+gy);
+  ctx=stage.getContext('2d');ctx.save();rr(cx2,cy2,tw,th,18);ctx.clip();ctx.drawImage(off,cx2,cy2,tw,th);ctx.restore();
+  ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=2;rr(cx2,cy2,tw,th,18);ctx.stroke();
+  const idx=ELS.indexOf(el)+1;txt((idx<10?'0':'')+idx+'  '+el.label,cx2+6,cy2+th+56,'800 30px Inter','#cfe0ff');});
+ return els.length;};
+window.checkAll=function(){window.errs=[];ELS.forEach(el=>{renderEl(el,0.3);renderEl(el,0.78);});return window.errs;};
+window.CATLIST=CATS;
+(async()=>{await document.fonts.load('100px "Archivo Black"');await document.fonts.load('100px Anton');await document.fonts.load('800 40px Inter');await document.fonts.ready;
+ window.ready=true;
+ if(!P.has('sheet')&&!P.has('check')){let idx=0,auto=true,t0=performance.now(),lt0=0;
+  const lbl=document.getElementById('lbl');
+  function show(){ctx=stage.getContext('2d');bgBase();try{ELS[idx].fn(lt0);}catch(e){}
+   const n=(idx+1<10?'0':'')+(idx+1);lbl.textContent=n+' / '+ELS.length+'  ·  '+ELS[idx].cat+'  ·  '+ELS[idx].label;}
+  function loop(){const dt=(performance.now()-t0)/1000;lt0=dt*0.8;if(auto&&lt0>1.6){idx=(idx+1)%ELS.length;t0=performance.now();lt0=0;}
+   if(!auto&&lt0>1.6){t0=performance.now();lt0=0;}show();requestAnimationFrame(loop);}
+  document.getElementById('prev').onclick=()=>{idx=(idx-1+ELS.length)%ELS.length;t0=performance.now();};
+  document.getElementById('next').onclick=()=>{idx=(idx+1)%ELS.length;t0=performance.now();};
+  document.getElementById('auto').onclick=e=>{auto=!auto;e.target.textContent=auto?'Pause':'Auto-play';};
+  loop();}})();
+</script>

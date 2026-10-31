@@ -1,0 +1,8 @@
+engine/node_modules/
+engine/public/projects/
+engine/src/build/
+episodes/*/render.mp4
+episodes/*/render_sheet.jpg
+episodes/*/still_*.png
+*.mp4
+.DS_Store
