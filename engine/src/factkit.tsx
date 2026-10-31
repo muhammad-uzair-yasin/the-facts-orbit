@@ -173,3 +173,91 @@ export const Outro: React.FC<{ f: number; at: number; light?: boolean }> = ({ f,
     </g>
   );
 };
+
+// =====================================================================================
+// DIRECTOR — camera moves per shot + transitions between shots (+ punch-in zooms, handheld)
+// =====================================================================================
+/** Camera keyframe: look at world point (x,y) with zoom z (>=1) and roll r (deg). */
+export type Cam = { x: number; y: number; z: number; r?: number };
+/** Transition INTO a shot. whip = fast pan + motion blur; zoom = zoom-through; iris = circle reveal;
+ *  wipe = diagonal wipe; push = slide up; flash = white flash cut; spin = rotate+zoom; cut = hard cut. */
+export type Trans = "whip" | "whipUp" | "zoom" | "iris" | "wipe" | "push" | "flash" | "spin" | "cut";
+export type Shot = {
+  from: number; to: number;
+  /** camera path: list of [frame, Cam]; eased between keys. One key = locked-off camera. */
+  cam: [number, Cam][];
+  tr?: Trans; trLen?: number;
+  render: () => React.ReactNode;
+};
+const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+const camAt = (f: number, keys: [number, Cam][]): Cam => {
+  if (f <= keys[0][0]) return keys[0][1];
+  for (let i = 0; i < keys.length - 1; i++) {
+    const [f0, a] = keys[i], [f1, b] = keys[i + 1];
+    if (f <= f1) {
+      const t = easeInOut(clamp01((f - f0) / Math.max(1, f1 - f0)));
+      return { x: lerp(a.x, b.x, t), y: lerp(a.y, b.y, t), z: lerp(a.z, b.z, t), r: lerp(a.r ?? 0, b.r ?? 0, t) };
+    }
+  }
+  return keys[keys.length - 1][1];
+};
+/** CSS transform that puts world point (x,y) at screen centre at zoom z, clamped so frame edges never show. */
+const camCss = (c: Cam, extraZ = 1, dx = 0, dy = 0, rot = 0) => {
+  const z = Math.max(1, c.z * extraZ);
+  const hw = VW / (2 * z), hh = VH / (2 * z);
+  const cx = Math.min(VW - hw, Math.max(hw, c.x)), cy = Math.min(VH - hh, Math.max(hh, c.y));
+  const tx = VW / 2 - cx * z + dx, ty = VH / 2 - cy * z + dy;
+  return `translate(${tx}px, ${ty}px) scale(${z}) rotate(${(c.r ?? 0) + rot}deg)`;
+};
+/**
+ * Director renders the active shot with its moving camera, and during the first trLen frames of a shot
+ * renders the outgoing shot too, blended by the chosen transition.
+ * punches: [frame, strength] quick zoom punch-ins (e.g. 0.12) on key words. shake: [frame, px] impact shakes.
+ */
+export const Director: React.FC<{ f: number; shots: Shot[]; punches?: [number, number][]; shakes?: [number, number][]; handheld?: number }> = ({ f, shots, punches = [], shakes = [], handheld = 4 }) => {
+  const idx = Math.max(0, shots.findIndex((s) => f >= s.from && f < s.to));
+  const cur = shots[idx];
+  const prev = idx > 0 ? shots[idx - 1] : null;
+  const L = cur.trLen ?? (cur.tr === "flash" || cur.tr === "cut" ? 6 : 12);
+  const t = clamp01((f - cur.from) / L);
+  const inTr = prev && cur.tr && cur.tr !== "cut" && t < 1;
+  // punch-ins + shakes + handheld
+  let pz = 1;
+  for (const [at, k] of punches) { const q = f - at; if (q >= 0 && q < 18) pz += k * Math.sin(Math.min(1, q / 5) * Math.PI / 2) * Math.exp(-Math.max(0, q - 5) / 5); }
+  let sx = Math.sin(f * 0.047) * handheld + Math.sin(f * 0.021 + 2) * handheld * 0.6;
+  let sy = Math.sin(f * 0.039 + 1) * handheld + Math.sin(f * 0.017) * handheld * 0.6;
+  for (const [at, amp] of shakes) { const q = f - at; if (q >= 0 && q < 22) { const d = Math.exp(-q / 6); sx += Math.sin(q * 1.35) * amp * d; sy += Math.cos(q * 1.1) * amp * 0.6 * d; } }
+  const layer = (s: Shot, style: React.CSSProperties, extraZ = 1, dx = 0, dy = 0, rot = 0) => (
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden", ...style }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: VW, height: VH, transformOrigin: "0 0", transform: camCss(camAt(f, s.cam), extraZ * pz, dx + sx, dy + sy, rot) }}>
+        <svg width={VW} height={VH} viewBox={`0 0 ${VW} ${VH}`}>{s.render()}</svg>
+      </div>
+    </div>
+  );
+  if (!inTr || !prev) return <>{layer(cur, {})}</>;
+  const e = easeInOut(t);
+  const blur = (k: number) => ({ filter: `blur(${(k).toFixed(1)}px)` });
+  switch (cur.tr) {
+    case "whip": { const b = Math.sin(t * Math.PI) * 26;
+      return <>{layer(prev, blur(b), 1, -e * VW * 1.1)}{layer(cur, blur(b), 1, (1 - e) * VW * 1.1)}</>; }
+    case "whipUp": { const b = Math.sin(t * Math.PI) * 26;
+      return <>{layer(prev, blur(b), 1, 0, -e * VH)}{layer(cur, blur(b), 1, 0, (1 - e) * VH)}</>; }
+    case "push":
+      return <>{layer(prev, { opacity: 1 - e * 0.6 }, 1 - e * 0.1, 0, -e * 300)}{layer(cur, { boxShadow: "0 -30px 60px rgba(0,0,0,0.5)" }, 1, 0, (1 - e) * VH)}</>;
+    case "zoom":
+      return <>{layer(prev, { opacity: 1 - e, ...blur(e * 14) }, 1 + e * 1.6)}{layer(cur, { opacity: e, ...blur((1 - e) * 10) }, 0.65 + e * 0.35)}</>;
+    case "spin":
+      return <>{layer(prev, { opacity: 1 - e, ...blur(e * 10) }, 1 + e * 0.8, 0, 0, e * 25)}{layer(cur, { opacity: e }, 1.6 - e * 0.6, 0, 0, (1 - e) * -25)}</>;
+    case "iris": { const r = e * 1150;
+      return <>{layer(prev, {})}{layer(cur, { clipPath: `circle(${r}px at 50% 46%)` })}</>; }
+    case "wipe": { const p = e * 160 - 30;
+      return <>{layer(prev, {})}{layer(cur, { clipPath: `polygon(0 0, ${p}% 0, ${p - 30}% 100%, 0 100%)` })}</>; }
+    case "flash":
+      return <>{layer(t < 0.5 ? prev : cur, {})}<div style={{ position: "absolute", inset: 0, background: "#fff", opacity: Math.sin(t * Math.PI) * 0.85 }} /></>;
+    default:
+      return <>{layer(cur, {})}</>;
+  }
+};
+/** Whoosh cues for every transition (2 frames before the shot starts). */
+export const transitionCues = (shots: Shot[], vol = 0.42): Cue[] =>
+  shots.filter((s, i) => i > 0 && s.tr && s.tr !== "cut").map((s) => [s.from - 2, s.tr === "flash" ? "impact" : "whoosh", vol] as Cue);

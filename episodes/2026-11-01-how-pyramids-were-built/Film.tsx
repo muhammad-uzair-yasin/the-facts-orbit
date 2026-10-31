@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { Shots, ShotDef, Figure, FontStyle, Vignette, ramp, eio, eout, pop, clamp01, lerp, mix, rnd, blinkAt, VW, VH, INK } from "./kit";
-import { Narration, Sfx, Cue, Caps, Cover, Brand, Chip, BigNum, Stamp, Drift, Outro, countUp, FONT, YEL, INKC } from "./factkit";
+import { Narration, Sfx, Cue, Caps, Cover, Brand, Chip, BigNum, Stamp, Drift, Outro, countUp, FONT, YEL, INKC, Director, Shot, transitionCues } from "./factkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 // cue frames (from gen_words cue table)
@@ -336,35 +336,37 @@ const S9_Outro: React.FC<{ f: number }> = ({ f }) => (
 
 export const PyramidsFilm: React.FC = () => {
   const f = useCurrentFrame();
-  const SHOTS: ShotDef[] = [
-    { from: 0, to: F.great, z0: 1.08, z1: 1.0, fx: 540, fy: 900, render: () => <S1_Hook f={f} /> },
-    { from: F.great, to: F.y2013, z0: 1.0, z1: 1.08, fx: 540, fy: 900, render: () => <S2_Blocks f={f} /> },
-    { from: F.y2013, to: F.merer, z0: 1.0, z1: 1.06, fx: 540, fy: 860, render: () => <S3_Papyrus f={f} /> },
-    { from: F.merer, to: F.sledge, z0: 1.0, z1: 1.06, fx: 540, fy: 1100, render: () => <S4_Boat f={f} /> },
-    { from: F.sledge, to: F.y2014, z0: 1.02, z1: 1.1, fx: 600, fy: 1000, render: () => <S5_Sledge f={f} /> },
-    { from: F.y2014, to: F.builders, z0: 1.0, z1: 1.06, fx: 540, fy: 800, render: () => <S6_Physics f={f} /> },
-    { from: F.builders, to: F.magic, z0: 1.0, z1: 1.07, fx: 500, fy: 950, render: () => <S7_Village f={f} /> },
-    { from: F.magic, to: F.sub, z0: 1.0, z1: 1.08, fx: 540, fy: 900, render: () => <S8_Recap f={f} /> },
-    { from: F.sub, to: TOTAL + 1, z0: 1.04, z1: 1.0, fx: 540, fy: 1000, render: () => <S9_Outro f={f} /> },
+  // camera path per shot: [frame, {x, y (world point at screen centre), z (zoom), r (roll)}]
+  const SHOTS: Shot[] = [
+    { from: 0, to: F.great, render: () => <S1_Hook f={f} />, cam: [[0, { x: 640, y: 860, z: 1.3 }], [60, { x: 560, y: 900, z: 1.12 }], [F.aliens + 4, { x: 420, y: 760, z: 1.22 }], [F.slaves + 10, { x: 640, y: 820, z: 1.18 }], [F.great, { x: 420, y: 1000, z: 1.1 }]] },
+    { from: F.great, to: F.y2013, tr: "whip", render: () => <S2_Blocks f={f} />, cam: [[F.great, { x: 540, y: 1250, z: 1.3 }], [F.nobody - 10, { x: 540, y: 820, z: 1.05 }], [F.y2013, { x: 380, y: 1050, z: 1.18 }]] },
+    { from: F.y2013, to: F.merer, tr: "flash", render: () => <S3_Papyrus f={f} />, cam: [[F.y2013, { x: 540, y: 760, z: 1.0 }], [F.logbook - 10, { x: 540, y: 880, z: 1.2 }], [F.merer, { x: 520, y: 760, z: 1.12, r: -1.5 }]] },
+    { from: F.merer, to: F.sledge, tr: "iris", render: () => <S4_Boat f={f} />, cam: [[F.merer, { x: 540, y: 560, z: 1.18 }], [F.boat - 20, { x: 520, y: 900, z: 1.08 }], [F.thirty + 10, { x: 600, y: 1080, z: 1.2 }], [F.sledge, { x: 780, y: 1060, z: 1.25 }]] },
+    { from: F.sledge, to: F.y2014, tr: "whipUp", render: () => <S5_Sledge f={f} />, cam: [[F.sledge, { x: 330, y: 880, z: 1.28 }], [F.painting + 20, { x: 520, y: 900, z: 1.22 }], [F.y2014, { x: 700, y: 860, z: 1.3 }]] },
+    { from: F.y2014, to: F.builders, tr: "zoom", render: () => <S6_Physics f={f} />, cam: [[F.y2014, { x: 540, y: 460, z: 1.2 }], [F.right, { x: 540, y: 800, z: 1.06 }], [F.half + 10, { x: 600, y: 1000, z: 1.12 }], [F.builders, { x: 560, y: 960, z: 1.04 }]] },
+    { from: F.builders, to: F.magic, tr: "wipe", render: () => <S7_Village f={f} />, cam: [[F.builders, { x: 540, y: 700, z: 1.22 }], [F.village + 40, { x: 420, y: 1050, z: 1.15 }], [F.paid, { x: 560, y: 920, z: 1.12 }], [F.magic, { x: 700, y: 780, z: 1.25 }]] },
+    { from: F.magic, to: F.sub, tr: "push", render: () => <S8_Recap f={f} />, cam: [[F.magic, { x: 540, y: 560, z: 1.35, r: 2 }], [F.brilliant, { x: 540, y: 900, z: 1.08, r: 0 }], [F.sub, { x: 540, y: 960, z: 1.0 }]] },
+    { from: F.sub, to: TOTAL + 1, tr: "zoom", render: () => <S9_Outro f={f} />, cam: [[F.sub, { x: 540, y: 1000, z: 1.12 }], [TOTAL, { x: 540, y: 960, z: 1.0 }]] },
   ];
-  const KICKS: [number, number][] = [[F.aliens + 18, 14], [F.slaves + 16, 14], [F.great + 80, 10], [F.y2013, 12], [F.y2013 + 80, 12], [F.thirty, 10], [F.half + 6, 18], [F.paid + 10, 14], [F.brilliant, 10]];
+  const PUNCH: [number, number][] = [[F.aliens + 18, 0.1], [F.slaves + 16, 0.1], [F.great + 80, 0.08], [F.y2013 + 80, 0.1], [F.logbook, 0.07], [F.thirty, 0.08], [F.half + 6, 0.16], [F.paid + 10, 0.12], [F.brilliant, 0.1]];
+  const SHAKE: [number, number][] = [[F.aliens + 18, 8], [F.y2013 + 80, 10], [F.half + 6, 16], [F.paid + 10, 10]];
   const SFX: Cue[] = [
     [F.aliens - 8, "whoosh", 0.45], [F.aliens + 18, "impact", 0.5], [F.slaves, "pop", 0.4], [F.slaves + 16, "impact", 0.5],
-    [F.great - 2, "whoosh", 0.4], [F.great + 10, "riser", 0.25], [F.great + 80, "impact", 0.45], [F.nobody, "pop", 0.3],
-    [F.y2013 - 2, "whoosh", 0.4], [F.y2013, "boom", 0.35], [F.y2013 + 80, "impact", 0.45], [F.logbook, "pop", 0.4],
-    [F.merer - 2, "whoosh", 0.4], [F.merer + 10, "tick", 0.3], [F.boat - 4, "whoosh", 0.3], [F.thirty, "pop", 0.4],
-    [F.sledge - 2, "whoosh", 0.4], [F.painting + 20, "pop", 0.35],
-    [F.y2014 - 2, "whoosh", 0.4], [F.y2014, "impact", 0.4], [F.right - 60, "riser", 0.3], [F.half + 6, "boom", 0.4],
-    [F.builders - 2, "whoosh", 0.4], [F.village + 6, "pop", 0.3], [F.paid + 10, "impact", 0.5],
-    [F.magic - 2, "whoosh", 0.4], [F.boats, "pop", 0.4], [F.boats + 24, "pop", 0.4], [F.brilliant, "impact", 0.45],
-    [F.sub - 2, "whoosh", 0.4], [F.sub + 4, "pop", 0.4], [F.sub + 34, "click", 0.6],
+    [F.great + 10, "riser", 0.25], [F.great + 80, "impact", 0.45], [F.nobody, "pop", 0.3],
+    [F.y2013, "boom", 0.35], [F.y2013 + 80, "impact", 0.45], [F.logbook, "pop", 0.4],
+    [F.merer + 10, "tick", 0.3], [F.boat - 4, "whoosh", 0.3], [F.thirty, "pop", 0.4],
+    [F.painting + 20, "pop", 0.35],
+    [F.y2014, "impact", 0.4], [F.right - 60, "riser", 0.3], [F.half + 6, "boom", 0.4],
+    [F.village + 6, "pop", 0.3], [F.paid + 10, "impact", 0.5],
+    [F.boats, "pop", 0.4], [F.boats + 24, "pop", 0.4], [F.brilliant, "impact", 0.45],
+    [F.sub + 4, "pop", 0.4], [F.sub + 34, "click", 0.6],
   ];
   const fade = Math.min(eout(ramp(f, 0, 6)), 1 - ramp(f, TOTAL - 16, TOTAL - 2));
   const accent = f < F.y2013 ? YEL : f < F.y2014 ? "#e4873b" : f < F.builders ? TEAL : YEL;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       <FontStyle />
-      <Shots f={f} shots={SHOTS} kicks={KICKS} />
+      <Director f={f} shots={SHOTS} punches={PUNCH} shakes={SHAKE} />
       <svg width={VW} height={VH} viewBox={`0 0 ${VW} ${VH}`} style={{ position: "absolute", inset: 0 }}>
         <Brand f={f} />
         <Cover f={f} word="PYRAMIDS" sub="HOW WERE THEY BUILT?" until={F.great - 10} />
@@ -373,7 +375,7 @@ export const PyramidsFilm: React.FC = () => {
       <Caps f={f} words={WORDS} chunks={CHUNKS} accent={accent} theme="dark" hide={f < 30} />
       <AbsoluteFill style={{ background: "#000", opacity: 1 - fade, pointerEvents: "none" }} />
       <Narration slug="pyramids" total={TOTAL} />
-      <Sfx cues={SFX} />
+      <Sfx cues={[...SFX, ...transitionCues(SHOTS)]} />
     </AbsoluteFill>
   );
 };

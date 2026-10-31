@@ -62,3 +62,12 @@ and the status block in `AGENTS.md`, then commit + push.
 The first two videos were made with a different, older pipeline: a canvas page (`engine/legacy-canvas/video.html`,
 `video2.html`) driven by `timeline.json`, frames captured with Playwright (`vrender.js`) and encoded with ffmpeg.
 It is kept for reference; new videos use the Remotion engine above.
+
+## Camera + transitions (Director, from Oct 31 2026 — required on every new film)
+`engine/src/factkit.tsx` → `<Director f shots punches shakes />` replaces `Shots`.
+- Each shot: `{ from, to, tr, cam: [[frame, {x, y, z, r}], ...], render }`. The camera looks at world point (x, y) with zoom z ≥ 1 and roll r; keys are eased; framing is clamped so frame edges never show.
+- Moves to use: pan (x changes), tilt/crane (y changes), dolly push-in (z up), pull-back reveal (z down), slight roll.
+- `tr` = transition INTO the shot: `whip`, `whipUp` (motion-blurred pans), `zoom` (zoom-through), `iris` (circle reveal), `wipe` (diagonal), `push` (slide up), `flash` (white flash, for big reveals like a year), `spin`, `cut`. Vary them — never the same transition twice in a row.
+- `punches`: [frame, 0.07–0.16] quick zoom punch-ins on key words; `shakes`: [frame, px] impact shakes.
+- `transitionCues(SHOTS)` adds a whoosh (or impact for flash) to the SFX track for every transition.
+- Keep the character's head above the caption band (screen y < ~1600) when zooming: higher zoom pushes the ground down.
