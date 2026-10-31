@@ -13,7 +13,7 @@ One video per day. End line of every video: *"Subscribe for a new fact every sin
 
 ## Current status (update this block after every video)
 - First video published Oct 31 (https://youtu.be/-mQPpige55M).
-- Nov 1–7 week: topics picked by demand research; 7 scripts written AND narrated by the agent (Kokoro am_adam) in `episodes/2026-11-0*/`. Films not built yet.
+- Nov 1–7 week: all 7 films BUILT and rendered (cast characters with their own Kokoro voices, Director camera + transitions, CC0 SFX, mastered -14 LUFS). Awaiting Uzair's review → upload via Postsiva → schedule daily 14:00 UTC (7 PM PKT).
 
 ## Next actions
 1. For each `episodes/2026-11-0*` folder: run engine/gen_words.py → build Film.tsx/entry.tsx (topic-built world, cover frame with big yellow keyword) → QA → send to Uzair.
