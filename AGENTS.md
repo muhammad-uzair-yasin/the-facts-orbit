@@ -13,10 +13,10 @@ One video per day. End line of every video: *"Subscribe for a new fact every sin
 
 ## Current status (update this block after every video)
 - First video published Oct 31 (https://youtu.be/-mQPpige55M).
-- **7 scripts approved for Nov 1–7** + 1 spare in `queue/` — waiting for Uzair's 7 recordings; then build all 7 and schedule them in Postsiva at 7:00 PM PKT (14:00 UTC) daily.
+- Nov 1–7 week: topics picked by demand research; 7 scripts written AND narrated by the agent (Kokoro af_nicole) in `episodes/2026-11-0*/`. Films not built yet.
 
 ## Next actions
-1. When the 7 MP3s arrive (numbered 1–7 = queue files 01–07): one episode folder each, topic-built worlds per the scene plans in `queue/`, cover frame with the big yellow keyword, QA, send.
+1. For each `episodes/2026-11-0*` folder: run engine/gen_words.py → build Film.tsx/entry.tsx (topic-built world, cover frame with big yellow keyword) → QA → send to Uzair.
 2. Uzair uploads each MP4 (Postsiva upload link) → schedule with `scheduled_time` (Nov N, 14:00 UTC).
 3. Keep the queue ≥ 7 ahead, rotating niches; psychology lists get Part 2 sequels.
 

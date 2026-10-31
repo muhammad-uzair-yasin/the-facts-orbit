@@ -6,3 +6,5 @@ episodes/*/render_sheet.jpg
 episodes/*/still_*.png
 *.mp4
 .DS_Store
+engine/tts/*.onnx
+engine/tts/*.bin

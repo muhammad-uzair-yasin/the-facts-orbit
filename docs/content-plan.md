@@ -17,18 +17,25 @@ One surprising, **verified** fact per day, acted out by the stick figure in a wo
 Hook = the fact/question itself → the setup → the twist/number acted out → what it means → "Subscribe for a new fact every single day."
 **Cover frame:** first frame = one big yellow outlined keyword (MOON, BRAIN, SMOKE…) so the Shorts grid is clickable.
 
-## Queue — week of Nov 1–7, 2026 (scripts approved Oct 31; awaiting Uzair's recordings)
-Schedule: one per day at **7:00 PM PKT (14:00 UTC)** via Postsiva `scheduled_time`.
+## Queue — week of Nov 1–7, 2026 (topics chosen by YouTube demand research, Oct 31)
+Narration: agent-generated, Kokoro voice af_nicole (see engine/tts/README.md). Schedule: 7:00 PM PKT (14:00 UTC) daily via Postsiva `scheduled_time`.
 
-| # | Date | Title / hook | Niche | Key sources |
+### Why these topics — demand research (Oct 31, YouTube search data via Uzair's desktop browser)
+Measured per topic: biggest video/Short (ceiling) and median Short (how a typical upload does).
+Key finding: on most topics the median Short gets ~1K views; a few topics have median Shorts in the hundreds of thousands
+(pyramids ~340K, Titanic ~390K, psychology facts ~380K, dark psychology ~170K) — lead with those.
+Dropped as weak: Cleopatra/Moon landing (saturated, ~0 views), trees vs stars (~10K best), smoke-room bystander (~20K), "5 weird brain things" (weak matches).
+Backlog (high ceiling, crowded): what if the Sun disappeared (49M), what if humans disappeared (46M), why we yawn (56M), why we dream (37M), déjà vu (28M), why time feels faster (20M), signs you're smarter (13M), what if the Moon disappeared (1.2M).
+
+| Date | Episode folder | Topic | Ceiling / median Short | Key sources |
 |---|---|---|---|---|
-| 1 | Nov 1 | What if the Moon disappeared tonight? | space / what if | EarthDate "If Earth had no Moon" (tides ~1/3; tilt 22.1–24.5°, Mars 25°+ swings) |
-| 2 | Nov 2 | 5 Weird Things Your Brain Does Every Day (Part 1) | psychology list | Blakemore et al. (tickle, 0.2 s delay); Radvansky 2011 doorway effect; Drouin 2012 phantom vibrations 89%; semantic satiation |
-| 3 | Nov 3 | Cleopatra lived closer to the Moon landing than to the Great Pyramid | history | Pyramid ~2560 BC; Cleopatra d. 30 BC; Apollo 11 1969 |
-| 4 | Nov 4 | Would you leave a room filling with smoke? | human nature | Latané & Darley 1968: alone 75%, with 2 passive actors 10% |
-| 5 | Nov 5 | There are more trees on Earth than stars in our galaxy | nature | Crowther et al. 2015 (Nature): ~3.04 trillion trees, ~46% lost since farming began, ~15 bn/yr lost; Milky Way 100–400 bn stars |
-| 6 | Nov 6 | Nobody is looking at you as much as you think | human nature | Gilovich, Medvec & Savitsky 2000 (Barry Manilow shirt: guessed ~50%, actual ~25%) |
-| 7 | Nov 7 | What if you fell into a black hole? | space / what if | spaghettification (stellar-mass), gentle horizon for supermassive, time dilation |
-| next | — | What if Earth stopped spinning? (script written) | what if | equator ~1,670 km/h; day slowing ~2 ms/century |
+| Nov 1 | 2026-11-01-how-pyramids-were-built | How the pyramids were really built | 448M / ~340K | Diary of Merer (Wadi al-Jarf 2013); UvA 2014 PRL wet sand halves pulling force (Djehutihotep painting); workers' tombs at Giza |
+| Nov 2 | 2026-11-02-what-if-earth-stopped-spinning | What if Earth stopped spinning? | 46M / ~30K | equator ~1,670 km/h; day slowing ~2 ms/century |
+| Nov 3 | 2026-11-03-3-manipulation-tricks | 3 tricks people use to make you say yes (how to spot them) | 6.2M / ~170K | Freedman & Fraser 1966 (76% vs 17%); Cialdini 1975 (50% vs 17%); Regan 1971 (free soda → ~2× raffle tickets) |
+| Nov 4 | 2026-11-04-titanic-no-bodies | Why no bodies were ever found at the Titanic | 54M / ~390K | wreck ~3,800 m, found 1985; Ballard: deep water undersaturated, bones dissolve; shoes in pairs (Cameron) |
+| Nov 5 | 2026-11-05-why-goosebumps | Why you get goosebumps | 40M / ~2K | arrector pili; Hsu/Lin, Cell, Jul 2020 — nerve activates hair-follicle stem cells, new hair <2 weeks in cold (mice) |
+| Nov 6 | 2026-11-06-spotlight-effect | Nobody is looking at you (spotlight effect) | 9.8M / ~380K (psych facts) | Gilovich, Medvec & Savitsky 2000 (guessed ~50%, actual ~25%) |
+| Nov 7 | 2026-11-07-what-if-black-hole | What if you fell into a black hole? | 23M / ~1K | spaghettification; gentle supermassive horizon; time dilation |
 
-Full scripts: `queue/` folder.
+Status (Oct 31 night): all 7 scripts written and narrated (episode folders: script.txt, narration.mp3, sents.json). Films not yet built.
+Older drafts (moon, Cleopatra, smoke room, trees, brain list) remain in `queue/` as backlog.
