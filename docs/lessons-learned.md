@@ -21,3 +21,8 @@
 - ElevenLabs API + Postsiva upload backend are blocked from the workspace → Uzair records voice and uploads files himself.
 - GitHub: the agent session can push to existing repos but cannot create new ones → Uzair creates empty repos.
 - The agent's workspace is wiped after inactivity → **always push after each video** (rules.md #14).
+
+## Audio offset bug (found Oct 31, 2026)
+- Word timings and lip-sync use **film frame = 15 + seconds × 30**, so the narration must start at frame 15:
+  `<Sequence from={15} durationInFrames={TOTAL - 15}><Audio src=.../></Sequence>` (or `<Narration/>` from `engine/src/factkit.tsx`).
+- The Oct 31 news episode and Agent School trailer played the narration from frame 0, so captions/mouth lagged the voice by 0.5 s in the published videos. Fixed in the repo Film.tsx files; the Mars film was correct.
