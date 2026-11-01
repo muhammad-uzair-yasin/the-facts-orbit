@@ -37,3 +37,6 @@ Treat them as requirements. If a rule seems to conflict with a skill or template
 
 ## Sound effects (Uzair, Nov 1 2026)
 - The SFX layer (whooshes, pops, impacts, risers) felt "totally off". From now on: **no SFX, or minimal** — at most a very soft cue on a major reveal or the subscribe click, low volume. Voice first; no whoosh on every cut.
+
+## ElevenLabs usage (Uzair, Nov 1 2026)
+- Use ElevenLabs ONLY for text-to-voice (narration). Do NOT use its image, video, lip-sync or other creative tools.
