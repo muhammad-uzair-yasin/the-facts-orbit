@@ -91,3 +91,31 @@ Uploaded as private with publishAt via schedule_with="youtube" (thumbnail applie
 - Nov 03: https://youtu.be/EVypnONS0ko
 - Nov 04: https://youtu.be/ES5kv8DuxXc
 - Nov 05: https://youtu.be/dw9ZroSyHzY
+
+## Nov 1 2026 (12:40 PKT): new SEO descriptions
+Keyword-first descriptions (docs/descriptions-nov.json). Nov 1–5 are YouTube-native (Uzair pastes descriptions in Studio). Nov 6–30 re-created on Postsiva with the new description + thumbnail; current Postsiva scheduled_post_ids:
+- Nov 06: 637d3da2-317c-4b84-b87a-c72fe967e8b8
+- Nov 07: 20ef2d87-6df6-47db-a9bc-c67cdb7c46cd
+- Nov 08: 7f7e80e6-4abd-46b3-aefd-6a657bdaea86
+- Nov 09: f66e9aa2-3f39-4a62-a03c-63440674301b
+- Nov 10: 9c975e6a-f225-4d83-b643-2f21017171d6
+- Nov 11: f540701c-1a4d-4e08-830c-0e8e47fabc48
+- Nov 12: 078fe05b-7dd5-42d5-a29b-6700d8ff26d9
+- Nov 13: cac7c829-682e-46c8-a38e-0f60086df06a
+- Nov 14: 9a3b0b92-1148-4262-95a2-f6e005ce229b
+- Nov 15: 31496300-e52f-4428-9224-c140395deb65
+- Nov 16: a4760af8-4ce6-4897-819b-49a233ffd7e6
+- Nov 17: f8039352-f9cd-477d-8f5a-c80301873589
+- Nov 18: 08974fc5-c458-4d6b-9fb7-5f2757661e71
+- Nov 19: c3ca65cc-f022-4fe7-b338-51461d932f40
+- Nov 20: 4acc01e7-ebf7-49a4-a9ad-7c806c5c3720
+- Nov 21: b1ebecf9-655d-4a58-b212-6bd7afd6c924
+- Nov 22: 5972381a-0612-499c-b1b7-aefd17c743a2
+- Nov 23: 88fe9496-17e3-4d0c-b692-a9ad56955abb
+- Nov 24: afd7d684-493e-4ca9-96c4-fb6038ae38ad
+- Nov 25: 38fd22d9-9ffa-43bc-8753-033c6db5c717
+- Nov 26: 86327eab-b9c0-4faa-9bfd-7c842d0c53c3
+- Nov 27: 7a9e2bb2-3b1c-446d-b5d5-97df1eab3842
+- Nov 28: fd15ad64-7a76-4a15-a894-296028313060
+- Nov 29: 243e8a05-5482-43eb-9069-87cddf3ab427
+- Nov 30: e674e2bc-ff22-409c-95ee-10218dbf59a0
