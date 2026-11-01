@@ -34,3 +34,6 @@ Treat them as requirements. If a rule seems to conflict with a skill or template
 13. **News descriptions list all sources** (one link per story).
 14. **After every video, commit and push the episode to this repo** (script, sents.json, words.ts, Film.tsx, entry.tsx, narration.mp3, BRIEF.md, contact sheet) and update `docs/publish-log.md` + `AGENTS.md` status.
    *Why:* the agent's cloud workspace is ephemeral; the repo is the memory that lets any AI agent continue the work.
+
+## Sound effects (Uzair, Nov 1 2026)
+- The SFX layer (whooshes, pops, impacts, risers) felt "totally off". From now on: **no SFX, or minimal** — at most a very soft cue on a major reveal or the subscribe click, low volume. Voice first; no whoosh on every cut.
