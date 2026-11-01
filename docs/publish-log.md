@@ -48,3 +48,38 @@ All 23 passed the 2-pass QA (`qa/passA_*.jpg` every 1 s + `qa/passB_*.jpg` every
 | Sat Nov 28 | 3 Tricks to Read Anyone (Part 2) | d5f2f70f-5767-4d4d-b656-f6d90ddd69c4 | a8e6bfdf-77f0-4299-9955-ecc3e99ddd48 | 17:00 |
 | Sun Nov 29 | Déjà Vu: Why It Happens | 3216ac5c-81a1-4713-8ede-263eba979289 | e897b69d-6e5d-48e1-bab0-5790de191b58 | 17:00 |
 | Mon Nov 30 | The City Frozen in Ash for 2,000 Years | 3b396f0b-7d8b-4249-b3c3-3c78a9e9c632 | e39d0db8-fd86-4b69-abbb-07aa4fddac93 | 21:00 |
+
+## Nov 1 2026 (12:30 PKT): thumbnails added to all 30 November posts
+Old scheduled posts were cancelled and re-created with thumbnail_url (Postsiva YOUTUBE_POST_VIDEO now supports it). Same media, title, description and time. Thumbnails: engine/thumbs (ThumbKit + Thumbs/Thumbs2), uploaded to https://cdn.postsiva.com/uploads/images/facts-orbit/facts-thumb-novDD.jpg
+| Day | NEW scheduled_post_id |
+|---|---|
+| Nov 01 | de02e6e4-faa2-44dc-b06d-4d225e0ea879 |
+| Nov 02 | 233f45a9-ab63-4817-a9e1-1b3aed761044 |
+| Nov 03 | 6461f0ac-f262-4020-bf84-4035acb31247 |
+| Nov 04 | 1380ddbd-7536-4d6a-97ae-8442098c20cb |
+| Nov 05 | 65932894-284e-4906-a0d2-1e91e3b25898 |
+| Nov 06 | d67c230a-7f68-4599-b4b2-86966b7c55d8 |
+| Nov 07 | eee1dd7e-8b73-4509-a190-2a77861dfc32 |
+| Nov 08 | 31683743-e950-445f-a7e2-4a0431725d36 |
+| Nov 09 | 8b59fd6c-f0db-4013-a57a-b997559dafc6 |
+| Nov 10 | 68abe5b4-74ea-4d88-a014-d9e7db524c41 |
+| Nov 11 | a4bb0d46-8e57-40a0-81e6-d0ab87805e52 |
+| Nov 12 | 4a1f51eb-f41e-45b3-a805-f503dfe1f5e9 |
+| Nov 13 | 732a1579-d557-43b9-be57-20670aaf840f |
+| Nov 14 | 8a91a9c1-598a-4d18-9354-3c6ddff87a53 |
+| Nov 15 | bf69e595-f801-4626-a567-9f164dcd34bd |
+| Nov 16 | 4f97c924-0819-4e6b-840e-a977964cba53 |
+| Nov 17 | 6f6841e7-27bc-49b8-93e8-49495552fc39 |
+| Nov 18 | 402eafc0-3251-4f55-bf11-c15c20d3ffec |
+| Nov 19 | 8c7aa1f7-38f4-4d77-91ff-3ae6ba69ce25 |
+| Nov 20 | 5746ecab-1fd6-4310-b22d-44b5b4f33c9d |
+| Nov 21 | 739e421f-6c0e-4f50-9027-a138fc4f3a37 |
+| Nov 22 | 35211374-1eea-4dbd-84dc-341b3e3155c7 |
+| Nov 23 | 879a174e-0019-40e0-a5b7-205e846b0ceb |
+| Nov 24 | a68e4b63-4ddb-4c39-96ba-c3516a8b39b4 |
+| Nov 25 | 5815d7fb-4ceb-4931-972b-79055d3318c1 |
+| Nov 26 | 65774cac-f9c9-4107-a85b-4aa074eff170 |
+| Nov 27 | d6085179-7443-466f-8d1e-204df8db7b72 |
+| Nov 28 | 821dbe1c-747d-4c21-95b8-9561128bcc5f |
+| Nov 29 | e83de05a-273f-4324-9807-7b948147792c |
+| Nov 30 | 99bbff44-cdff-407b-bd2e-30793e049001 |

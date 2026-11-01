@@ -19,12 +19,13 @@ export type ThumbDef = {
   circle?: { x: number; y: number; r: number };
 };
 
-export const Txt: React.FC<{ x: number; y: number; s: number; c: string; children: React.ReactNode; sw?: number; rot?: number; ls?: number }> = ({ x, y, s, c, children, sw, rot = 0, ls = 0 }) => (
+const fit = (txt: React.ReactNode, s: number) => { const n = String(txt).length; return Math.min(s, 960 / (n * 0.66)); };
+export const Txt: React.FC<{ x: number; y: number; s: number; c: string; children: React.ReactNode; sw?: number; rot?: number; ls?: number }> = ({ x, y, s: s0, c, children, sw, rot = 0, ls = 0 }) => { const s = fit(children, s0); return (
   <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <text x={6} y={10} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={s} fill="#000" opacity={0.35} letterSpacing={ls}>{children}</text>
     <text textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={s} fill={c} stroke={INKC} strokeWidth={sw ?? s * 0.16} paintOrder="stroke" strokeLinejoin="round" letterSpacing={ls}>{children}</text>
   </g>
-);
+); };
 
 export const Arrow: React.FC<{ x1: number; y1: number; x2: number; y2: number }> = ({ x1, y1, x2, y2 }) => {
   const a = Math.atan2(y2 - y1, x2 - x1), L = Math.hypot(x2 - x1, y2 - y1);

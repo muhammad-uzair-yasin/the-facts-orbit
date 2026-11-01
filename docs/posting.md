@@ -49,3 +49,9 @@ More from me:
 ## Timing (Uzair, Nov 1 2026: maximise the US audience)
 Weekdays 4:00 PM ET = 21:00 UTC (EST, Nov–Mar) / 20:00 UTC (EDT, Mar–Nov). Weekends 12:00 PM ET = 17:00 UTC (EST) / 16:00 UTC (EDT).
 Reschedule with `YOUTUBE_MANAGE_SCHEDULED_POST {scheduled_post_id, channel_id, action:"reschedule", scheduled_time}`.
+
+## Thumbnails (from Nov 1 2026)
+- Every Short gets a custom thumbnail: `bash engine/thumbs/render_thumbs.sh <DD>...` → episodes/<ep>/thumbnail.png (template in engine/thumbs/ThumbKit.tsx; per-video defs in Thumbs*.tsx).
+- Convert to JPG and upload to the Postsiva CDN (S3/MinIO, needs SigV4): `curl -X PUT https://cdn.postsiva.com/uploads/images/facts-orbit/<name>.jpg --aws-sigv4 "aws:amz:us-east-1:s3" --user "$CDN_USER:$CDN_PASS" -H "Content-Type: image/jpeg" --upload-file <file>` (credentials come from Uzair; never commit them).
+- Pass `thumbnail_url` to YOUTUBE_POST_VIDEO. There is no "update scheduled post" tool: to change an already-scheduled post, re-create it with the same media_id/time and cancel the old one.
+- CDN gotcha: requesting a URL before the file exists makes Cloudflare cache the 404 for ~1 day; use a fresh name.
