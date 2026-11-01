@@ -40,3 +40,6 @@ Treat them as requirements. If a rule seems to conflict with a skill or template
 
 ## ElevenLabs usage (Uzair, Nov 1 2026)
 - Use ElevenLabs ONLY for text-to-voice (narration). Do NOT use its image, video, lip-sync or other creative tools.
+
+## On-screen title (Uzair, Nov 1 2026)
+- Every video keeps its title visible for the WHOLE video (top-left or top-right).
