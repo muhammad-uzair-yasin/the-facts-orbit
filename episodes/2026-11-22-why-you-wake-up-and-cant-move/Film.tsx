@@ -408,7 +408,7 @@ const S9_Painting: React.FC<{ f: number }> = ({ f }) => {
         <rect x={-250} y={-40} width={500} height={80} rx={8} fill="#c8a24a" stroke={INKC} strokeWidth={5} />
         <text y={16} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={INKC} letterSpacing={3}>"THE NIGHTMARE"</text>
       </g>
-      <BigNum f={f} at={F.y1781 - 2} text="1781" x={540} y={400} hue={YEL} fs={170} />
+      <BigNum f={f} at={F.y1781 - 2} text="1781" x={540} y={470} hue={YEL} fs={170} />
       {f >= F.creature && <Chip x={760} y={600} w={320} label="ON HER CHEST" hue={RED} p={pop(f, F.chest2, 12)} fs={34} />}
     </g>
   );
@@ -418,7 +418,7 @@ const S10_Safe: React.FC<{ f: number }> = ({ f }) => {
   return (
     <g>
       <Grad id="safe" top="#1a3a5a" bot="#2a5a6a" />
-      <Stamp f={f} at={F.no} x={540} y={380} text="NOT DANGEROUS" hue={GREEN} fs={70} rot={-6} />
+      <Stamp f={f} at={F.no} x={540} y={500} text="NOT DANGEROUS" hue={GREEN} fs={58} rot={-6} />
       {/* stopwatch */}
       <g transform="translate(300 800)" opacity={clamp01(pop(f, F.seconds - 4, 12))}>
         <rect x={-24} y={-200} width={48} height={40} rx={8} fill="#c9d3e6" stroke={INKC} strokeWidth={6} />
@@ -477,7 +477,7 @@ export const SleepParalysisFilm: React.FC = () => {
     { from: c6, to: b7, tr: "cut", render: () => <S6_Weight f={f} />, cam: [[c6, { x: 620, y: 1100, z: 1.4 }], [F.chest, { x: 600, y: 1150, z: 1.25 }], [F.sense, { x: 300, y: 1000, z: 1.3 }], [b7, { x: 360, y: 980, z: 1.2 }]] },
     { from: b7, to: b8, tr: "spin", render: () => <Talk f={f} i={3} />, cam: [[b7, { x: 540, y: 1150, z: 1.2 }], [b8, { x: 540, y: 1120, z: 1.12 }]] },
     { from: b8, to: b9, tr: "whipUp", render: () => <S8_Legends f={f} />, cam: [[b8, { x: 540, y: 600, z: 1.3 }], [F.newfoundland, { x: 360, y: 780, z: 1.2 }], [F.japan, { x: 600, y: 780, z: 1.08 }], [b9, { x: 540, y: 820, z: 1.05 }]] },
-    { from: b9, to: b10, tr: "iris", render: () => <S9_Painting f={f} />, cam: [[b9, { x: 540, y: 700, z: 1.25 }], [F.y1781, { x: 540, y: 700, z: 1.1 }], [F.creature, { x: 480, y: 820, z: 1.45 }], [b10, { x: 520, y: 820, z: 1.3 }]] },
+    { from: b9, to: b10, tr: "iris", render: () => <S9_Painting f={f} />, cam: [[b9, { x: 540, y: 700, z: 1.25 }], [F.y1781, { x: 540, y: 700, z: 1.1 }], [F.creature, { x: 540, y: 770, z: 1.25 }], [b10, { x: 540, y: 770, z: 1.2 }]] },
     { from: b10, to: b11, tr: "push", render: () => <Talk f={f} i={4} />, cam: [[b10, { x: 540, y: 1150, z: 1.12 }], [b11, { x: 540, y: 1150, z: 1.2 }]] },
     { from: b11, to: b12, tr: "wipe", render: () => <S10_Safe f={f} />, cam: [[b11, { x: 540, y: 600, z: 1.3 }], [F.seconds, { x: 520, y: 800, z: 1.15 }], [F.regular, { x: 540, y: 1100, z: 1.12 }], [b12, { x: 540, y: 1000, z: 1.02 }]] },
     { from: b12, to: TOTAL + 1, tr: "zoom", render: () => <S11_Outro f={f} />, cam: [[b12, { x: 540, y: 1000, z: 1.12 }], [TOTAL, { x: 540, y: 960, z: 1.0 }]] },

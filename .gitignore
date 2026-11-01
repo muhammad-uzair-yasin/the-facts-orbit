@@ -9,3 +9,4 @@ episodes/*/still_*.png
 engine/tts/*.onnx
 engine/tts/*.bin
 engine/src/build_*/
+episodes/*/qa/

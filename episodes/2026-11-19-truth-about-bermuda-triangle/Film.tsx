@@ -118,7 +118,8 @@ const Room: React.FC<{ f: number }> = ({ f }) => (
     <ellipse cx={540} cy={1460} rx={520} ry={50} fill={CYAN} opacity={0.05} />
   </g>
 );
-const Duo: React.FC<{ f: number; askMood?: "happy" | "neutral" | "surprised"; wave?: boolean }> = ({ f, askMood, wave }) => (
+const duoHidden = (f: number) => (f > F.december + 4 && f < F.vanished - 4) || (f > F.thought + 4 && f < F.rescue - 4) || (f > F.busiest - 12 && f < F.y1975 - 14);
+const Duo: React.FC<{ f: number; askMood?: "happy" | "neutral" | "surprised"; wave?: boolean }> = ({ f, askMood, wave }) => duoHidden(f) ? null : (
   <g>
     <g transform="translate(210 1570) scale(0.66)"><Person d={TRAV} f={f} seed={15} talk={askTalk(f)} wave={wave ? 1 : 0} mood={askMood ?? (speaking(f, "asker", SPK) ? "surprised" : "neutral")} /></g>
     <g transform="translate(870 1570) scale(0.66)"><Person d={PILOT} f={f} seed={13} talk={hostTalk(f)} wave={wave ? 1 : 0} mood="happy" /></g>
@@ -359,8 +360,8 @@ const S7_Stories: React.FC<{ f: number }> = ({ f }) => {
         {cur > 0 && [0, 1, 2].map((i) => <path key={i} d="M330 900 Q320 760 340 640 Q370 500 440 400 Q520 300 640 250" stroke={CYAN} strokeWidth={14 - i * 4} fill="none" strokeDasharray="30 22" strokeDashoffset={-f * 4 - i * 17} opacity={cur * (0.9 - i * 0.25)} strokeLinecap="round" transform={`translate(${i * 18} 0)`} />)}
       </MapBoard>
       {f >= F.busiest && <Chip x={540} y={170} w={440} label="BUSY OCEAN" hue={YEL} p={pop(f, F.busiest, 10)} fs={38} textColor={INKC} />}
-      {f >= F.storms && <Chip x={790} y={1180} w={320} label="SUDDEN STORMS" hue="#5a6478" p={pop(f, F.storms + 4, 10)} fs={30} />}
-      {f >= F.current && <Chip x={330} y={1180} w={340} label="FAST CURRENT" hue={CYAN} p={pop(f, F.current, 10)} fs={30} textColor={INKC} />}
+      {f >= F.storms && <Chip x={790} y={1000} w={320} label="SUDDEN STORMS" hue="#5a6478" p={pop(f, F.storms + 4, 10)} fs={30} />}
+      {f >= F.current && <Chip x={330} y={1000} w={340} label="FAST CURRENT" hue={CYAN} p={pop(f, F.current, 10)} fs={30} textColor={INKC} />}
       <Duo f={f} />
       <Bubble f={f} x={210} y={1250} labels={ASKL} />
     </g>

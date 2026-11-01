@@ -174,7 +174,7 @@ const S1_Ask: React.FC<{ f: number }> = ({ f }) => (
 );
 /** 2: sleeper dreams ~2 hours a night. */
 const S2_TwoHours: React.FC<{ f: number }> = ({ f }) => {
-  const h = countUp(f, F.two - 6, F.two + 16, 2);
+  const h = countUp(f, F.two - 6, F.two + 16, 2); const hl = h === 1 ? "1 HOUR" : `${h} HOURS`;
   return (
     <g>
       <Sky f={f} top="#120d36" bot="#3a2378" />
@@ -188,7 +188,7 @@ const S2_TwoHours: React.FC<{ f: number }> = ({ f }) => {
           <path d="M-20 30 L40 -50 L100 30 Z" fill={MINT} stroke={INKC} strokeWidth={5} strokeLinejoin="round" />
         </g>
       </g>
-      {f >= F.two - 6 && <BigNum f={f} at={F.two - 4} text={`${h} HOURS`} x={540} y={480} hue={YEL} fs={150} />}
+      {f >= F.two - 6 && <BigNum f={f} at={F.two - 4} text={hl} x={540} y={480} hue={YEL} fs={150} />}
       {f >= F.total && <Chip x={540} y={600} w={420} label="EVERY NIGHT" hue={LAV} p={pop(f, F.total, 10)} fs={40} textColor={INKC} />}
     </g>
   );
@@ -359,7 +359,7 @@ const S10_Blind: React.FC<{ f: number }> = ({ f }) => (
 const S11_Senses: React.FC<{ f: number }> = ({ f }) => (
   <g>
     <Sky f={f} top="#170f40" bot="#3a2378" moon={false} />
-    <Cloud x={540} y={760} s={2.6} fill="#2b2466" />
+    <Cloud x={540} y={760} s={2.1} fill="#2b2466" />
     {f >= F.too && <Chip x={540} y={400} w={460} label="THEY DREAM TOO" hue={MINT} p={pop(f, F.too, 10)} fs={42} textColor={INKC} />}
     <Icon kind="eye" x={540} y={660} s={0.9} p={pop(f, F.pictures - 2, 12)} f={f} />
     <Icon kind="ear" x={250} y={1080} p={pop(f, F.sounds, 12)} f={f} />
@@ -386,14 +386,14 @@ export const DreamsFilm: React.FC = () => {
     { from: F.every, to: F.forget - 24, tr: "iris", render: () => <S2_TwoHours f={f} />, cam: [[F.every, { x: 540, y: 1200, z: 1.25 }], [F.two, { x: 540, y: 900, z: 1.05 }], [F.forget - 24, { x: 560, y: 960, z: 1.1 }]] },
     { from: F.forget - 24, to: F.twoQ, tr: "flash", render: () => <S3_Forget f={f} />, cam: [[F.forget - 24, { x: 700, y: 1150, z: 1.3 }], [F.forget + 10, { x: 540, y: 960, z: 1.05 }], [F.twoQ, { x: 540, y: 800, z: 1.15 }]] },
     { from: F.twoQ, to: F.memory - 30, tr: "whip", render: () => <S4_Point f={f} />, cam: [[F.twoQ, { x: 440, y: 1000, z: 1.16 }], [F.point, { x: 470, y: 1000, z: 1.12 }], [F.unsure, { x: 540, y: 960, z: 1.05 }], [F.memory - 30, { x: 600, y: 940, z: 1.1 }]] },
-    { from: F.memory - 30, to: F.proof, tr: "zoom", render: () => <S5_Replay f={f} />, cam: [[F.memory - 30, { x: 540, y: 600, z: 1.3 }], [F.replays, { x: 540, y: 900, z: 1.05 }], [F.keep, { x: 540, y: 1050, z: 1.1 }], [F.proof, { x: 540, y: 1050, z: 1.14 }]] },
+    { from: F.memory - 30, to: F.proof, tr: "zoom", render: () => <S5_Replay f={f} />, cam: [[F.memory - 30, { x: 540, y: 700, z: 1.25 }], [F.replays, { x: 540, y: 900, z: 1.05 }], [F.keep, { x: 540, y: 980, z: 1.06 }], [F.proof, { x: 540, y: 980, z: 1.08 }]] },
     { from: F.proof, to: F.y2010, tr: "push", render: () => <S6_Proof f={f} />, cam: [[F.proof, { x: 440, y: 1000, z: 1.18 }], [F.y2010, { x: 480, y: 1000, z: 1.12 }]] },
     { from: F.y2010, to: F.ones, tr: "flash", render: () => <S7_Maze f={f} />, cam: [[F.y2010, { x: 540, y: 420, z: 1.3 }], [F.maze, { x: 400, y: 800, z: 1.15 }], [F.nap, { x: 600, y: 820, z: 1.1 }], [F.ones, { x: 700, y: 760, z: 1.22 }]] },
-    { from: F.ones, to: F.whoa, tr: "cut", render: () => <S7_Maze f={f} />, cam: [[F.ones, { x: 760, y: 700, z: 1.35 }], [F.ten - 10, { x: 540, y: 1100, z: 1.05 }], [F.whoa, { x: 600, y: 1000, z: 1.08 }]] },
+    { from: F.ones, to: F.whoa, tr: "cut", render: () => <S7_Maze f={f} />, cam: [[F.ones, { x: 700, y: 760, z: 1.25 }], [F.ten - 10, { x: 540, y: 960, z: 1.0 }], [F.whoa, { x: 560, y: 960, z: 1.04 }]] },
     { from: F.whoa, to: F.safe, tr: "spin", render: () => <S8_Practice f={f} />, cam: [[F.whoa, { x: 440, y: 1000, z: 1.18 }], [F.practice, { x: 470, y: 1000, z: 1.12 }], [F.exactly, { x: 540, y: 900, z: 1.05 }], [F.safe, { x: 560, y: 900, z: 1.1 }]] },
-    { from: F.safe, to: F.blind, tr: "wipe", render: () => <S9_Danger f={f} />, cam: [[F.safe, { x: 540, y: 500, z: 1.2 }], [F.chased, { x: 450, y: 1000, z: 1.1 }], [F.falling, { x: 540, y: 900, z: 1.2, r: -3 }], [F.blind, { x: 540, y: 960, z: 1.1, r: 3 }]] },
+    { from: F.safe, to: F.blind, tr: "wipe", render: () => <S9_Danger f={f} />, cam: [[F.safe, { x: 540, y: 620, z: 1.15 }], [F.chased, { x: 500, y: 960, z: 1.04 }], [F.falling, { x: 540, y: 900, z: 1.08, r: -3 }], [F.blind, { x: 540, y: 960, z: 1.04, r: 3 }]] },
     { from: F.blind, to: F.too - 4, tr: "whipUp", render: () => <S10_Blind f={f} />, cam: [[F.blind, { x: 440, y: 1000, z: 1.16 }], [F.too - 4, { x: 480, y: 1000, z: 1.1 }]] },
-    { from: F.too - 4, to: F.sub, tr: "iris", render: () => <S11_Senses f={f} />, cam: [[F.too - 4, { x: 540, y: 600, z: 1.2 }], [F.pictures, { x: 540, y: 760, z: 1.15 }], [F.sounds, { x: 460, y: 1050, z: 1.08 }], [F.smells, { x: 600, y: 1050, z: 1.08 }], [F.sub, { x: 540, y: 960, z: 1.0 }]] },
+    { from: F.too - 4, to: F.sub, tr: "iris", render: () => <S11_Senses f={f} />, cam: [[F.too - 4, { x: 560, y: 860, z: 1.04 }], [F.pictures, { x: 560, y: 900, z: 1.0 }], [F.sounds, { x: 500, y: 1000, z: 1.05 }], [F.smells, { x: 560, y: 1000, z: 1.05 }], [F.sub, { x: 540, y: 960, z: 1.0 }]] },
     { from: F.sub, to: TOTAL + 1, tr: "push", render: () => <S12_Outro f={f} />, cam: [[F.sub, { x: 540, y: 1000, z: 1.1 }], [TOTAL, { x: 540, y: 960, z: 1.0 }]] },
   ];
   const PUNCH: [number, number][] = [[F.two, 0.1], [F.minutes, 0.12], [F.twoQ, 0.08], [F.memory, 0.1], [F.y2010, 0.12], [F.ten, 0.14], [F.exactly, 0.1], [F.chased, 0.08], [F.falling, 0.1], [F.sounds, 0.06], [F.touch, 0.06], [F.smells, 0.06]];

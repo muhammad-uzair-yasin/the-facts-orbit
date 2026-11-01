@@ -383,8 +383,8 @@ const S5_Crowd: React.FC<{ f: number }> = ({ f }) => {
         const p = i === 0 ? 1 : clamp01(pop(f, born, 8));
         return <Dancer key={i} f={f} x={x} y={y} s={s * p} seed={i} c={i === 0 ? DRESS[0] : undefined} />;
       })}
-      <Calendar x={210} y={360} s={0.8} top={isAug ? "1518" : "DAY"} big={isAug ? "AUG" : String(day)} p={pop(f, F.days - 4, 10)} hue={isAug ? PURP : RED} />
-      <g transform="translate(700 360)" opacity={pop(f, F.days, 10)}>
+      <Calendar x={210} y={520} s={0.8} top={isAug ? "1518" : "DAY"} big={isAug ? "AUG" : String(day)} p={pop(f, F.days - 4, 10)} hue={isAug ? PURP : RED} />
+      <g transform="translate(700 520)" opacity={pop(f, F.days, 10)}>
         <rect x={-300} y={-110} width={600} height={220} rx={30} fill="rgba(17,17,24,0.85)" stroke={YEL} strokeWidth={6} />
         <text y={-50} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={36} fill="#fff" letterSpacing={4}>DANCERS</text>
         <text y={big ? 64 : 76} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={big ? 92 : 130} fill={YEL}>{counter}</text>
@@ -496,7 +496,7 @@ const S12_Panic: React.FC<{ f: number }> = ({ f }) => (
     <rect width={VW} height={VH} fill="#3a2430" />
     <g opacity={0.35}><Street f={f} dusk={1} noCath /></g>
     <rect width={VW} height={VH} fill="#2a1420" opacity={0.45} />
-    <Stamp f={f} at={F.mass} x={540} y={430} text="MASS PANIC" hue={RED} fs={104} rot={-5} />
+    <Stamp f={f} at={F.mass} x={540} y={440} text="MASS PANIC" hue={RED} fs={90} rot={-5} />
     <IconCard x={250} y={720} p={pop(f, F.starving, 12)} label="STARVING" hue="#c8893a">
       <path d="M-90 -10 Q0 90 90 -10 Z" fill="#c9ced8" stroke={INKC} strokeWidth={7} />
       <ellipse cy={-10} rx={92} ry={18} fill="#9aa4b2" stroke={INKC} strokeWidth={6} />
@@ -579,8 +579,8 @@ const S14_Shrine: React.FC<{ f: number }> = ({ f }) => {
         return <Dancer key={i} f={f} x={x} y={y} s={lerp(0.75, 0.38, t)} seed={i + 50} calm={1} pray={f > F.pray ? 1 : 0} />;
       })}
       <g opacity={out}>
-        <BigNum f={f} at={F.september} text="SEPTEMBER" x={540} y={420} hue={YEL} fs={130} />
-        <Chip x={300} y={660} w={440} label="SHRINE OF ST. VITUS" hue={PURP} p={pop(f, F.shrine, 10)} fs={34} />
+        <BigNum f={f} at={F.september} text="SEPTEMBER" x={540} y={470} hue={YEL} fs={110} />
+        <Chip x={440} y={640} w={440} label="SHRINE OF ST. VITUS" hue={PURP} p={pop(f, F.shrine, 10)} fs={34} />
         <g opacity={0.9 * ramp(f, F.stopped + 2, F.stopped + 9)} transform="translate(540 1360) rotate(-6)"><rect x={-380} y={-62} width={760} height={116} rx={18} fill="#ffffff" /></g>
         <Stamp f={f} at={F.stopped} x={540} y={1360} text="PLAGUE STOPPED" hue="#1f9a5a" fs={64} rot={-6} />
       </g>
@@ -604,9 +604,9 @@ export const DancingPlagueFilm: React.FC = () => {
     { from: F.worseQ, to: F.records, tr: "whipUp", render: () => <S9_Worse f={f} />, cam: [[F.worseQ, { x: 360, y: 1060, z: 1.25 }], [F.much, { x: 580, y: 1000, z: 1.12 }], [F.records, { x: 600, y: 1000, z: 1.16 }]] },
     { from: F.records, to: F.reallyQ, tr: "iris", render: () => <S10_Collapse f={f} />, cam: [[F.records, { x: 540, y: 900, z: 1.2 }], [F.collapsed, { x: 540, y: 1000, z: 1.08 }], [F.exhaustion + 10, { x: 540, y: 900, z: 1.04 }], [F.died, { x: 540, y: 1100, z: 1.1 }], [F.reallyQ, { x: 540, y: 1150, z: 1.16 }]] },
     { from: F.reallyQ, to: F.mass, tr: "wipe", render: () => <S11_Really f={f} />, cam: [[F.reallyQ, { x: 400, y: 1060, z: 1.22 }], [F.historians, { x: 600, y: 1020, z: 1.12 }], [F.mass, { x: 640, y: 1000, z: 1.16 }]] },
-    { from: F.mass, to: F.fear, tr: "zoom", render: () => <S12_Panic f={f} />, cam: [[F.mass, { x: 540, y: 520, z: 1.3 }], [F.starving - 6, { x: 400, y: 680, z: 1.18 }], [F.sick + 4, { x: 680, y: 720, z: 1.18 }], [F.saints, { x: 540, y: 1100, z: 1.2 }], [F.made, { x: 540, y: 1150, z: 1.12 }], [F.fear, { x: 540, y: 960, z: 1.04 }]] },
+    { from: F.mass, to: F.fear, tr: "zoom", render: () => <S12_Panic f={f} />, cam: [[F.mass, { x: 540, y: 620, z: 1.2 }], [F.starving - 6, { x: 480, y: 700, z: 1.12 }], [F.sick + 4, { x: 600, y: 720, z: 1.12 }], [F.saints, { x: 540, y: 1000, z: 1.12 }], [F.made, { x: 540, y: 1000, z: 1.08 }], [F.fear, { x: 540, y: 960, z: 1.04 }]] },
     { from: F.fear, to: F.september, tr: "spin", render: () => <S13_Virus f={f} />, cam: [[F.fear, { x: 540, y: 900, z: 1.3 }], [F.spread + 20, { x: 540, y: 960, z: 1.04 }], [F.virus - 8, { x: 540, y: 960, z: 1.06 }], [F.virus + 10, { x: 540, y: 1000, z: 1.12 }], [F.september, { x: 540, y: 1000, z: 1.18 }]] },
-    { from: F.september, to: TOTAL + 1, tr: "flash", render: () => <S14_Shrine f={f} />, cam: [[F.september, { x: 540, y: 500, z: 1.2 }], [F.taken, { x: 500, y: 1000, z: 1.1 }], [F.shrine, { x: 760, y: 800, z: 1.2 }], [F.pray + 14, { x: 700, y: 860, z: 1.12 }], [F.stopped, { x: 540, y: 1000, z: 1.06 }], [F.sub, { x: 540, y: 1000, z: 1.04 }], [TOTAL, { x: 540, y: 960, z: 1.0 }]] },
+    { from: F.september, to: TOTAL + 1, tr: "flash", render: () => <S14_Shrine f={f} />, cam: [[F.september, { x: 540, y: 640, z: 1.12 }], [F.taken, { x: 500, y: 1000, z: 1.1 }], [F.shrine, { x: 620, y: 800, z: 1.12 }], [F.pray + 14, { x: 600, y: 860, z: 1.08 }], [F.stopped, { x: 540, y: 1000, z: 1.06 }], [F.sub, { x: 540, y: 1000, z: 1.04 }], [TOTAL, { x: 540, y: 960, z: 1.0 }]] },
   ];
   const PUNCH: [number, number][] = [[F.y1518, 0.12], [F.dancing, 0.1], [F.couldnt, 0.12], [F.dozens, 0.1], [F.hundreds, 0.12], [F.crazy, 0.1], [F.more, 0.14], [ASKS[3][0], 0.12], [F.much, 0.1], [F.collapsed, 0.1], [F.mass, 0.12], [F.curse, 0.1], [F.virus, 0.12], [F.september, 0.1], [F.stopped, 0.12]];
   const SHAKE: [number, number][] = [[F.couldnt, 8], [F.more, 10], [ASKS[3][0], 8], [F.collapsed, 12], [F.mass, 10], [F.virus, 10]];

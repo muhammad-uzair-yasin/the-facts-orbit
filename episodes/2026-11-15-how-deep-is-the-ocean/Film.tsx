@@ -176,7 +176,7 @@ const S2_Dive: React.FC<{ f: number }> = ({ f }) => {
   return (
     <g>
       <Column f={f} />
-      <text x={760} y={KM(0) + 150} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={44} fill="#fff" stroke={INKC} strokeWidth={7} paintOrder="stroke" opacity={pop(f, F.deepest, 10)}>DEEPEST POINT?</text>
+      <text x={690} y={KM(0) + 150} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={44} fill="#fff" stroke={INKC} strokeWidth={7} paintOrder="stroke" opacity={pop(f, F.deepest, 10)}>DEEPEST POINT?</text>
       {/* probe */}
       <g transform={`translate(550 ${py})`}>
         <line x1={0} y1={-2000} x2={0} y2={-20} stroke="#cfe8ff" strokeWidth={3} opacity={0.5} />
@@ -352,7 +352,7 @@ const S10_Life: React.FC<{ f: number }> = ({ f }) => {
   return (
     <SubInside f={f} view={view}>
       <Bubble f={f} a={F.what} b={F.whatEnd} x={300} y={1020} text={"WHAT'S DOWN\nTHERE?"} dx={130} fs={74} />
-      {f >= F.life - 2 && <BigNum f={f} at={F.life - 2} text="LIFE." x={540} y={260} hue={GREEN} fs={140} />}
+      {f >= F.life - 2 && f < F.tiny + 4 && <g opacity={1 - ramp(f, F.tiny - 6, F.tiny + 4)}><BigNum f={f} at={F.life - 2} text="LIFE." x={540} y={260} hue={GREEN} fs={140} /></g>}
       {f >= F.shrimp - 2 && <Chip x={540} y={800} w={360} label="AMPHIPODS" hue="#f2e6d8" p={pop(f, F.shrimp - 2, 10)} fs={42} textColor={INKC} />}
     </SubInside>
   );

@@ -19,3 +19,32 @@ Fill in YouTube links here once each goes live.
 - Facts: NASA Curiosity blue sunset Apr 15 2015 (sol 956, Gale Crater); fine Martian dust scatters red away and lets blue pass near the Sun; ~2 h twilight; butterscotch daytime sky.
 - Episode: `episodes/2026-10-31-blue-sunset-mars/` (Mars dusk world, astronaut stick figure with helmet, rover flash, Earth-red vs Mars-blue light beams, two moons).
 - Brand kit (avatar + banner) in `brand/`.
+
+
+## Nov 8–30 2026: Q&A duo format (asker + Adam), scheduled Nov 1
+All 23 passed the 2-pass QA (`qa/passA_*.jpg` every 1 s + `qa/passB_*.jpg` every half-second, each frame labeled with speaker + spoken word) and the audio cross-correlation check (voice at +0.5 s, corr ≥ 0.9).
+| Date | Title | media_id | scheduled_post_id | UTC |
+|---|---|---|---|---|
+| Sun Nov 8 | The Man Who Survived BOTH Atomic Bombs | 1daab68d-ad1f-4cd5-9e61-5eeeb142faa4 | 381a0435-ac6a-4f8c-814f-09a136fb9b67 | 17:00 |
+| Mon Nov 9 | The Sound So Loud It Broke Eardrums 40 Miles Away | e83939cb-99d6-4294-8d79-a4180944365b | 76724e86-0ca5-48c6-b320-dc38162a92b9 | 21:00 |
+| Tue Nov 10 | This Dog Waited 9 Years for His Owner | 77d36fdd-a9d0-4001-bcfd-6fdd6e0a9428 | 017f53a4-0f05-4297-825c-0547b0136a21 | 21:00 |
+| Wed Nov 11 | The Town That Danced Until People Dropped |  | d74fc00a-c9ad-426c-aa6a-9c2c48d1ad7f | 21:00 |
+| Thu Nov 12 | What If the Sun Disappeared Right Now? | 7fb5ed81-e3e9-41b1-a872-1e9dc2b59173 | 6de6dda5-373d-423f-83e7-05c1ec787a6f | 21:00 |
+| Fri Nov 13 | Would You Hurt a Stranger If Told To? | 557aca0c-03ee-42bb-9021-7776c5fc9ab5 | 3d40ebe7-78ef-46ae-b13f-4a68316c9e79 | 21:00 |
+| Sat Nov 14 | Millions Remember Something That NEVER Happened | 4e2311ff-7339-42af-bacf-6c2cb0caed6f | 7b62744c-9054-45bb-81cc-6a9b211bcfa9 | 17:00 |
+| Sun Nov 15 | How Deep Is the Ocean, Really? | 5f241c0f-f39c-4f9e-82a8-96adc3971a34 | 4dcb175b-20e6-41ba-8445-8c2da16646a8 | 17:00 |
+| Mon Nov 16 | Why You Yawn When Others Yawn | 3f4fca85-e3ec-443a-ae9a-7a814ecaaf1b | ddf81208-8ab0-4056-baaf-99d9e02e8648 | 21:00 |
+| Tue Nov 17 | The War a Country Lost... to Birds | e15423d8-9d78-4015-a553-f75ba0503fc1 | 1c4fa48c-82df-4dff-820a-df8dd5136b11 | 21:00 |
+| Wed Nov 18 | What Happens If You Never Sleep? | 931d0312-927c-4ab5-b8f1-5582a36f1364 | 7fd906c4-9714-4f50-83bf-049642b98ad8 | 21:00 |
+| Thu Nov 19 | The Truth About the Bermuda Triangle | e3b24727-86d9-41c8-af6f-2bb973ccc276 | 857ff514-0563-40ec-880d-2c6bafff0048 | 21:00 |
+| Fri Nov 20 | What If Every Human Vanished Tomorrow? | 1dd74d36-f45f-4bb4-b734-9cf353fa0adf | 8977bcb5-128c-40ad-9b22-a6a09b475e0f | 21:00 |
+| Sat Nov 21 | Is the Megalodon Still Alive? | a0891aa4-8901-4052-9255-6169386ea6f1 | 30bb8fd6-f238-4d87-b11e-106d89845d5a | 17:00 |
+| Sun Nov 22 | Why You Wake Up and Can't Move | a6324d32-57a9-4351-b6a9-dfceceaedd84 | 446831e3-024f-4957-ac75-e5cdaebb16a3 | 17:00 |
+| Mon Nov 23 | He Hijacked a Plane, Jumped... and Vanished | 47c231d3-4aa1-433e-92ff-9cd2916b0aca | b0b9077e-5cb2-4cb6-947b-854a89d8dcc6 | 21:00 |
+| Tue Nov 24 | One Candy Test That Predicted Kids' Futures | c13dcc34-820f-47a2-bd54-5156c30b5446 | 9b732c74-dfc0-4067-9b1b-9114837792f9 | 21:00 |
+| Wed Nov 25 | Why Do We Dream? | e46a6cbe-6e37-4111-9365-b72055cb15da | 3755d77b-d5b3-49d9-b074-7df8fe54d74c | 21:00 |
+| Thu Nov 26 | The 2,000-Year-Old Concrete That Heals Itself | 3d8e558f-742d-4969-92fe-f9740751d88e | 61241827-6273-4c52-827e-a6c3feed808d | 21:00 |
+| Fri Nov 27 | What Space Does to Your Body | cd59bee5-ff38-43cd-b420-59794fe9ac80 | 7ac282ce-70bd-4ddb-91da-fc5cd83eceef | 21:00 |
+| Sat Nov 28 | 3 Tricks to Read Anyone (Part 2) | d5f2f70f-5767-4d4d-b656-f6d90ddd69c4 | a8e6bfdf-77f0-4299-9955-ecc3e99ddd48 | 17:00 |
+| Sun Nov 29 | Déjà Vu: Why It Happens | 3216ac5c-81a1-4713-8ede-263eba979289 | e897b69d-6e5d-48e1-bab0-5790de191b58 | 17:00 |
+| Mon Nov 30 | The City Frozen in Ash for 2,000 Years | 3b396f0b-7d8b-4249-b3c3-3c78a9e9c632 | e39d0db8-fd86-4b69-abbb-07aa4fddac93 | 21:00 |

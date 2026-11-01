@@ -13,12 +13,13 @@ One video per day. End line of every video: *"Subscribe for a new fact every sin
 
 ## Current status (update this block after every video)
 - First video published Oct 31 (https://youtu.be/-mQPpige55M).
-- Nov 1–7 week: all 7 films BUILT and rendered (cast characters with their own Kokoro voices, Director camera + transitions, CC0 SFX, mastered -14 LUFS). Awaiting Uzair's review → upload via Postsiva → schedule daily 14:00 UTC (7 PM PKT).
+- Nov 1–7: 7 films rendered, uploaded and scheduled for US prime time (weekdays 21:00 UTC, weekends 17:00 UTC).
+- Nov 8–30: 23 films in the **Q&A duo format** (a cast character asks with their own Kokoro voice, Adam `am_adam` explains). All rendered, passed the 2-pass QA, and were uploaded and scheduled on Nov 1. IDs are in docs/publish-log.md. The brief is docs/film-brief-nov8-30.md. November is fully scheduled.
 
 ## Next actions
-1. For each `episodes/2026-11-0*` folder: run engine/gen_words.py → build Film.tsx/entry.tsx (topic-built world, cover frame with big yellow keyword) → QA → send to Uzair.
-2. Uzair uploads each MP4 (Postsiva upload link) → schedule with `scheduled_time` (Nov N, 14:00 UTC).
-3. Keep the queue ≥ 7 ahead, rotating niches; psychology lists get Part 2 sequels.
+1. December queue: validate demand first (YouTube search ceiling + median Short views), present topics to Uzair, then script → narrate (engine/tts/narrate.py) → gen_words → Film.tsx → render ONE AT A TIME (2 CPUs) → `python3 engine/qa/verify.py episodes/<ep>` and look at every passA/passB sheet → fix → upload → schedule.
+2. Fill in YouTube links in docs/publish-log.md as videos go live.
+3. Reserve topics: the Tunguska event, the immortal jellyfish, the Bloop, Pyramids Part 2.
 
 ## Definition of done for a video
 1. Script follows docs/rules.md (hook = topic, verified facts, CTA last) and Uzair recorded it.

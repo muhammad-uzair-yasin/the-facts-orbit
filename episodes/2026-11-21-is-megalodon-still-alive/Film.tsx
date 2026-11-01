@@ -288,9 +288,9 @@ const S4_Coast: React.FC<{ f: number }> = ({ f }) => {
       <Whale f={f} x={360 + Math.sin(chase * 0.01) * 14} y={720} L={260} dir={-1} />
       <Shark f={f} x={lerp(1250, 470, eout(ramp(f, F.hunted - 10, F.whales + 10)))} y={860} L={340} dir={-1} jaw={0.5 + 0.5 * Math.sin(f * 0.2)} seed={2} />
       {/* deep: empty */}
-      <text x={860} y={1420} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={60} fill="#ffffff" opacity={0.25}>? ? ?</text>
-      <Chip x={860} y={1260} w={300} label="THE DEEP" hue="#5a7a9a" p={pop(f, F.deep2 - 6, 12)} fs={40} />
-      <Cross x={860} y={1110} p={deepX} r={60} />
+      <text x={790} y={1420} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={60} fill="#ffffff" opacity={0.25}>? ? ?</text>
+      <Chip x={790} y={1260} w={300} label="THE DEEP" hue="#5a7a9a" p={pop(f, F.deep2 - 6, 12)} fs={40} />
+      <Cross x={790} y={1110} p={deepX} r={60} />
       {f >= F.warm && <Chip x={400} y={1110} w={420} label="WARM COAST ✓" hue={WARMC} p={warmC} fs={40} textColor={INKC} />}
       {/* we'd see it */}
       {f >= F.see - 4 && (
@@ -444,8 +444,8 @@ const S10_Cool: React.FC<{ f: number }> = ({ f }) => {
         <rect x={-18} y={-360 + cool * 240} width={36} height={420 - cool * 240} fill={mix(RED, "#3d8cff", cool)} />
         <text y={-430} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={mix(RED, "#5ad7ff", cool)} stroke={INKC} strokeWidth={6} paintOrder="stroke">{cool > 0.5 ? "COLD" : "WARM"}</text>
       </g>
-      <BigNum f={f} at={F.three - 2} text="3.5 MILLION" x={540} y={330} hue={YEL} fs={120} />
-      <Label x={540} y={420} text="YEARS AGO" p={pop(f, F.million + 6, 12)} fs={56} />
+      <BigNum f={f} at={F.three - 2} text="3.5 MILLION" x={540} y={380} hue={YEL} fs={120} />
+      <Label x={540} y={490} text="YEARS AGO" p={pop(f, F.million + 6, 12)} fs={56} />
       {f >= F.food && <Chip x={470} y={1420} w={420} label="FOOD MOVED AWAY" hue="#5ad7ff" p={pop(f, F.food + 4, 12)} fs={36} textColor={INKC} />}
     </g>
   );
@@ -497,7 +497,7 @@ export const MegalodonFilm: React.FC = () => {
     { from: c2, to: b3, tr: "cut", render: () => <S2_Size f={f} />, cam: [[c2, { x: 540, y: 1100, z: 1.2 }], [b3, { x: 540, y: 1000, z: 1.06 }]] },
     { from: b3, to: b4, tr: "zoom", render: () => <S3_Tooth f={f} />, cam: [[b3, { x: 540, y: 880, z: 1.25 }], [F.hand, { x: 560, y: 900, z: 1.1 }], [b4, { x: 540, y: 900, z: 1.16 }]] },
     { from: b4, to: b5, tr: "wipe", render: () => <S1_Boat f={f} i={1} dusk={0.7} />, cam: [[b4, { x: 540, y: 1200, z: 1.22 }], [F.problem, { x: 580, y: 1230, z: 1.3 }], [b5, { x: 560, y: 1230, z: 1.34 }]] },
-    { from: b5, to: b6, tr: "iris", render: () => <S4_Coast f={f} />, cam: [[b5, { x: 760, y: 1200, z: 1.3 }], [F.hunted, { x: 420, y: 800, z: 1.3 }], [F.coast, { x: 380, y: 760, z: 1.2 }], [F.see, { x: 420, y: 760, z: 1.12 }], [b6, { x: 540, y: 900, z: 1.0 }]] },
+    { from: b5, to: b6, tr: "iris", render: () => <S4_Coast f={f} />, cam: [[b5, { x: 760, y: 1200, z: 1.3 }], [F.hunted, { x: 520, y: 800, z: 1.22 }], [F.coast, { x: 540, y: 760, z: 1.15 }], [F.see, { x: 540, y: 760, z: 1.1 }], [b6, { x: 540, y: 900, z: 1.0 }]] },
     { from: b6, to: b7, tr: "push", render: () => <S5_Huge f={f} />, cam: [[b6, { x: 540, y: 1100, z: 1.12 }], [b7, { x: 540, y: 960, z: 1.0 }]] },
     { from: b7, to: b8, tr: "spin", render: () => <S6_Teeth f={f} />, cam: [[b7, { x: 600, y: 760, z: 1.3 }], [F.thousands, { x: 600, y: 900, z: 1.12 }], [b8, { x: 620, y: 1000, z: 1.2 }]] },
     { from: b8, to: b9, tr: "whip", render: () => <S7_Map f={f} />, cam: [[b8, { x: 540, y: 800, z: 1.3 }], [F.every, { x: 540, y: 900, z: 1.08 }], [F.no, { x: 540, y: 1150, z: 1.15 }], [b9, { x: 540, y: 1100, z: 1.1 }]] },

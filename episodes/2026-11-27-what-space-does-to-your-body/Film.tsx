@@ -322,7 +322,7 @@ const S9_Twins: React.FC<{ f: number }> = ({ f }) => {
         <g transform="translate(790 1260) scale(0.72)"><Person d={MARK} f={f} seed={5} talk={0} wave={0} mood="happy" /></g>
         <text x={790} y={1460} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={46} fill={GRN} opacity={f < F.scott || f >= F.mark - 20 ? 1 : 0}>MARK · EARTH</text>
       </g>
-      {f >= F.year - 4 && <Chip x={540} y={1560} w={600} label="ALMOST A YEAR (340 DAYS)" hue={YEL} p={pop(f, F.year - 4, 10)} fs={34} textColor={INKC} />}
+      {f >= F.year - 4 && <Chip x={540} y={1545} w={600} label="ALMOST A YEAR (340 DAYS)" hue={YEL} p={pop(f, F.year - 4, 10)} fs={34} textColor={INKC} />}
       {f >= F.identical && <Chip x={790} y={480 + 40} w={300} label="IDENTICAL TWIN" hue={GRN} p={pop(f, F.identical, 10)} fs={26} textColor={INKC} />}
     </g>
   );
@@ -386,7 +386,7 @@ export const SpaceBodyFilm: React.FC = () => {
     { from: F.thats, to: F.twoQ, tr: "spin", render: () => <S7_Treadmill f={f} />, cam: [[F.thats, { x: 540, y: 1200, z: 1.22 }], [F.two, { x: 540, y: 900, z: 1.02 }], [F.twoQ, { x: 540, y: 1000, z: 1.08 }]] },
     { from: F.twoQ, to: F.nasa - 6, tr: "whipUp", render: () => <S8_TwoHrs f={f} />, cam: [[F.twoQ, { x: 450, y: 1000, z: 1.18 }], [F.everyA, { x: 520, y: 900, z: 1.06 }], [F.nasa - 6, { x: 540, y: 900, z: 1.1 }]] },
     { from: F.nasa - 6, to: F.scott, tr: "flash", render: () => <S9_Twins f={f} />, cam: [[F.nasa - 6, { x: 540, y: 500, z: 1.25 }], [F.twins, { x: 540, y: 900, z: 1.02 }], [F.scott, { x: 540, y: 960, z: 1.06 }]] },
-    { from: F.scott, to: F.changed, tr: "cut", render: () => <S9_Twins f={f} />, cam: [[F.scott, { x: 300, y: 1000, z: 1.4 }], [F.year, { x: 330, y: 1050, z: 1.3 }], [F.mark, { x: 780, y: 1000, z: 1.35 }], [F.changed - 20, { x: 540, y: 1000, z: 1.0 }]] },
+    { from: F.scott, to: F.changed, tr: "cut", render: () => <S9_Twins f={f} />, cam: [[F.scott, { x: 420, y: 1100, z: 1.12 }], [F.year, { x: 480, y: 1100, z: 1.08 }], [F.mark, { x: 640, y: 1100, z: 1.08 }], [F.changed - 20, { x: 540, y: 1000, z: 1.0 }]] },
     { from: F.changed, to: F.genes - 8, tr: "push", render: () => <S10_Changed f={f} />, cam: [[F.changed, { x: 450, y: 1000, z: 1.18 }], [F.genes - 8, { x: 490, y: 1000, z: 1.12 }]] },
     { from: F.genes - 8, to: F.most, tr: "zoom", render: () => <S11_DNA f={f} />, cam: [[F.genes - 8, { x: 400, y: 900, z: 1.2 }], [F.caps, { x: 540, y: 700, z: 1.08 }], [F.longer, { x: 560, y: 960, z: 1.02 }], [F.most, { x: 600, y: 960, z: 1.08 }]] },
     { from: F.most, to: F.sub, tr: "cut", render: () => <S11_DNA f={f} />, cam: [[F.most, { x: 700, y: 900, z: 1.25 }], [F.notall, { x: 600, y: 1000, z: 1.06 }], [F.sub, { x: 580, y: 1000, z: 1.1 }]] },

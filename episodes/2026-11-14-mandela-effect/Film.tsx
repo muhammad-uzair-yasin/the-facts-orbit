@@ -265,9 +265,23 @@ const S8_Mono: React.FC<{ f: number }> = ({ f }) => {
     <g>
       <Bg f={f} id="mdBg8" />
       <text x={540} y={250} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={58} fill="#fff" stroke={INKC} strokeWidth={8} paintOrder="stroke" opacity={pop(f, F.monopoly - 4, 10) * (1 - ramp(f, F.pikachu - 10, F.pikachu))}>THE MONOPOLY MAN?</text>
-      <TopHat x={540} y={500} s={1.1} ghostMonocle={ghost} />
+      {/* memory vs reality cards (no mascot drawn) */}
+      <g opacity={clamp01(pop(f, F.monopoly + 4, 10))} transform="translate(300 600)">
+        <rect x={-190} y={-170} width={380} height={340} rx={26} fill={PAPER} stroke={RED} strokeWidth={9} />
+        <text y={-110} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={44} fill={RED}>MEMORY ✗</text>
+        <circle cx={0} cy={10} r={62} fill="#dff3ff" fillOpacity={0.6} stroke={INKC} strokeWidth={9} />
+        <path d="M60 34 Q84 60 76 86" stroke={INKC} strokeWidth={6} fill="none" />
+        <text y={140} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={38} fill={INKC}>MONOCLE</text>
+      </g>
+      <g opacity={clamp01(pop(f, F.noMon - 2, 10))} transform="translate(765 600)">
+        <rect x={-190} y={-170} width={380} height={340} rx={26} fill={PAPER} stroke={GREEN} strokeWidth={9} />
+        <text y={-110} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={44} fill={GREEN}>REALITY ✓</text>
+        <circle cx={0} cy={10} r={62} fill="#dff3ff" fillOpacity={0.3} stroke="#9aa0ad" strokeWidth={9} strokeDasharray="14 10" />
+        <line x1={-80} y1={-70} x2={80} y2={90} stroke={RED} strokeWidth={14} strokeLinecap="round" />
+        <text y={140} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={38} fill={INKC}>NONE</text>
+      </g>
       {f >= F.noMon - 2 && <Chip x={540} y={980} w={460} label="NO MONOCLE ✓" hue={GREEN} p={pop(f, F.noMon - 2, 10)} fs={44} textColor={INKC} />}
-      <Stamp f={f} at={F.ever} x={790} y={420} text="EVER." hue={RED} fs={80} rot={12} />
+      <Stamp f={f} at={F.ever} x={760} y={820} text="EVER." hue={RED} fs={70} rot={-8} />
       {/* tail colour swatches (generic shapes) */}
       <text x={540} y={1180} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={48} fill="#fff" stroke={INKC} strokeWidth={7} paintOrder="stroke" opacity={pop(f, F.pikachu - 4, 10)}>PIKACHU'S TAIL TIP?</text>
       {f >= F.tail - 4 && (
@@ -441,7 +455,7 @@ export const MandelaFilm: React.FC = () => {
     { from: F.walked - 6, to: F.okay - 4, tr: "push", render: () => <S5_Timeline f={f} />, cam: [[F.walked - 6, { x: 540, y: 420, z: 1.25 }], [F.y1990 + 10, { x: 540, y: 520, z: 1.12 }], [F.president + 10, { x: 540, y: 960, z: 1.12 }], [F.y2013 + 6, { x: 540, y: 1300, z: 1.12 }], [F.okay, { x: 540, y: 960, z: 1.0 }]] },
     { from: F.okay - 4, to: F.starWars - 6, tr: "iris", render: () => <S6_Mix f={f} />, cam: dlg(F.okay - 4, F.starWars) },
     { from: F.starWars - 6, to: F.monopoly - 6, tr: "flash", render: () => <S7_Quote f={f} />, cam: [[F.starWars - 6, { x: 540, y: 400, z: 1.3 }], [F.says, { x: 540, y: 760, z: 1.12 }], [F.right, { x: 540, y: 900, z: 1.05 }], [F.never2, { x: 540, y: 780, z: 1.12 }], [F.father2 + 10, { x: 540, y: 820, z: 1.06 }], [F.monopoly, { x: 540, y: 800, z: 1.1 }]] },
-    { from: F.monopoly - 6, to: F.why - 4, tr: "whipUp", render: () => <S8_Mono f={f} />, cam: [[F.monopoly - 6, { x: 540, y: 600, z: 1.2 }], [F.noMon, { x: 540, y: 640, z: 1.12 }], [F.ever + 6, { x: 600, y: 600, z: 1.16 }], [F.pikachu, { x: 540, y: 1180, z: 1.12 }], [F.why, { x: 540, y: 1200, z: 1.08 }]] },
+    { from: F.monopoly - 6, to: F.why - 4, tr: "whipUp", render: () => <S8_Mono f={f} />, cam: [[F.monopoly - 6, { x: 540, y: 600, z: 1.2 }], [F.noMon, { x: 540, y: 640, z: 1.12 }], [F.ever + 6, { x: 540, y: 620, z: 1.12 }], [F.pikachu, { x: 540, y: 1180, z: 1.12 }], [F.why, { x: 540, y: 1200, z: 1.08 }]] },
     { from: F.why - 4, to: F.because - 4, tr: "zoom", render: () => <S9_Why f={f} />, cam: dlg(F.why - 4, F.because) },
     { from: F.because - 4, to: F.rich - 6, tr: "iris", render: () => <S10_Puzzle f={f} />, cam: [[F.because - 4, { x: 540, y: 420, z: 1.3 }], [F.record, { x: 540, y: 700, z: 1.1 }], [F.rebuilds + 20, { x: 540, y: 900, z: 1.06 }], [F.gaps, { x: 540, y: 1100, z: 1.2 }], [F.rich, { x: 540, y: 1060, z: 1.12 }]] },
     { from: F.rich - 6, to: F.in2022 - 6, tr: "wipe", render: () => <S11_Adds f={f} />, cam: [[F.rich - 6, { x: 540, y: 900, z: 1.04 }], [F.should + 10, { x: 540, y: 600, z: 1.12 }], [F.adds - 4, { x: 600, y: 760, z: 1.15 }], [F.in2022, { x: 560, y: 860, z: 1.08 }]] },

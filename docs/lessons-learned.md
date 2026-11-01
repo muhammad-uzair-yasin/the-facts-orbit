@@ -26,3 +26,14 @@
 - Word timings and lip-sync use **film frame = 15 + seconds × 30**, so the narration must start at frame 15:
   `<Sequence from={15} durationInFrames={TOTAL - 15}><Audio src=.../></Sequence>` (or `<Narration/>` from `engine/src/factkit.tsx`).
 - The Oct 31 news episode and Agent School trailer played the narration from frame 0, so captions/mouth lagged the voice by 0.5 s in the published videos. Fixed in the repo Film.tsx files; the Mars film was correct.
+
+## Nov 1 2026: QA rule (Uzair)
+- "After creating a video, verify it at least 2 times. Look at the complete video, every frame, to check that everything is synced: voice and characters too."
+- Tool: `engine/qa/verify.py <episode>`. It cross-correlates the render audio with narration.mp3 (the voice must start at +0.5 s with corr ≥ 0.9) and checks that the frame count equals TOTAL. It writes pass A (every 1 s) and pass B (every 0.5 s) contact sheets. Each thumb is labeled with the speaker and the exact word being spoken.
+- Problems it caught on the first batch:
+  - Characters covering story screens (hide the duo during full-screen scenes).
+  - Big numbers and titles clipped at the top edge when the camera zooms (keep y ≥ ~450 for big text, or lower the zoom).
+  - Chips overlapping each other.
+  - A drawing that resembled a trademark mascot (Mandela: switched to MEMORY vs REALITY cards).
+- Render ONE video at a time on this 2-CPU box. Parallel agents writing films is fine, but parallel renders/stills thrash.
+- Background processes die when the session goes idle or the container restarts. Re-launch the render queue (`/tmp`) after a restart.

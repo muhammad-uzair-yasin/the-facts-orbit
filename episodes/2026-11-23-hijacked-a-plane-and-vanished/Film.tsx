@@ -223,7 +223,7 @@ const S2_Ticket: React.FC<{ f: number }> = ({ f }) => {
           <text y={80} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={150} fill={INKC}>{flip < 0.5 ? "1" : "24"}</text>
         </g>
       </g>
-      <BigNum f={f} at={F.y1971 - 2} text="1971" x={720} y={950} hue={YEL} fs={170} />
+      <BigNum f={f} at={F.y1971 - 2} text="1971" x={560} y={900} hue={YEL} fs={170} />
       {/* ticket counter */}
       <rect x={560} y={1220} width={520} height={260} fill="#8a5a3a" stroke={INKC} strokeWidth={8} />
       <rect x={560} y={1220} width={520} height={30} fill="#6a4a2a" />
@@ -433,9 +433,9 @@ const S11_River: React.FC<{ f: number }> = ({ f }) => {
       <Fig d={BOY} f={f} x={360} y={1520} s={1.0} seed={8} mood={found > 0.5 ? "surprised" : "happy"} />
       {/* little shovel */}
       <g transform={`translate(470 ${1380 + dig * 14}) rotate(${30 + dig * 12})`}><rect x={-6} y={-90} width={12} height={110} fill="#8a5a3a" stroke={INKC} strokeWidth={3} /><path d="M-26 20 L26 20 L18 70 L-18 70 Z" fill="#c9ced8" stroke={INKC} strokeWidth={4} /></g>
-      <BigNum f={f} at={F.y1980 - 2} text="1980" x={540} y={420} hue={YEL} fs={170} />
-      {f >= F.eight && <Chip x={330} y={560} w={330} label="AGE 8" hue={GREEN} p={pop(f, F.eight, 12)} fs={40} textColor={INKC} />}
-      {f >= F.river && <Chip x={760} y={560} w={420} label="COLUMBIA RIVER" hue="#3a7ab8" p={pop(f, F.river, 12)} fs={34} />}
+      <BigNum f={f} at={F.y1980 - 2} text="1980" x={540} y={560} hue={YEL} fs={170} />
+      {f >= F.eight && <Chip x={330} y={700} w={330} label="AGE 8" hue={GREEN} p={pop(f, F.eight, 12)} fs={40} textColor={INKC} />}
+      {f >= F.river && <Chip x={760} y={700} w={420} label="COLUMBIA RIVER" hue="#3a7ab8" p={pop(f, F.river, 12)} fs={34} />}
       {f >= F.twenty && <Label x={720} y={1250} text="ROTTING $20s" p={pop(f, F.twenty + 6, 12)} fs={58} fill={YEL} />}
     </g>
   );

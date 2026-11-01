@@ -201,7 +201,7 @@ const S2_Erupt: React.FC<{ f: number }> = ({ f }) => {
       <rect y={1070} width={VW} height={VH - 1070} fill={mix("#a9b36a", "#6e5a3a", dark)} />
       <City x={540} y={1330} />
       <rect y={1330} width={VW} height={VH - 1330} fill={mix("#cbb68e", "#7a6446", dark)} />
-      <BigNum f={f} at={F.y79 - 2} text="79 AD" x={540} y={360} hue={YEL} fs={200} />
+      <BigNum f={f} at={F.y79 - 2} text="79 AD" x={540} y={460} hue={YEL} fs={200} />
       <Chip x={540} y={1440} w={360} label="POMPEII" hue={RED} p={pop(f, F.pompeii, 10)} fs={50} />
       <Chip x={300} y={560} w={380} label="VESUVIUS" hue="#3a2c22" p={pop(f, F.vesuvius, 10)} fs={42} />
     </g>
@@ -408,7 +408,7 @@ const S9_DNA: React.FC<{ f: number }> = ({ f }) => {
         <text y={40} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={66} fill={INKC} opacity={1 - strike * 0.5}>"MOTHER & CHILD"</text>
         {strike > 0 && <line x1={-320} y1={22} x2={lerp(-320, 320, strike)} y2={22} stroke={RED} strokeWidth={14} strokeLinecap="round" />}
       </g>
-      <BigNum f={f} at={F.y2024} text="2024" x={540} y={300} hue={YEL} fs={170} />
+      <BigNum f={f} at={F.y2024} text="2024" x={540} y={360} hue={YEL} fs={170} />
       <DNA f={f} x={900} y={760} h={360} p={dna * (1 - ramp(f, F.man + 10, F.man + 20) * 0.6)} />
       <Chip x={240} y={760} w={260} label="DNA TEST" hue={CYAN} p={pop(f, F.dna, 10) * (1 - ramp(f, F.man - 6, F.man))} fs={36} textColor={INKC} />
       {f >= F.man - 2 && (

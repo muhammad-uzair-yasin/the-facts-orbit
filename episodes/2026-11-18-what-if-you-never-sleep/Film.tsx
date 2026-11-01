@@ -87,7 +87,8 @@ const Screen: React.FC<{ on: number; children?: React.ReactNode }> = ({ on, chil
     </g>
   </g>
 );
-const Duo: React.FC<{ f: number; askMood?: "happy" | "neutral" | "surprised"; hostMood?: "happy" | "neutral" | "surprised"; wave?: boolean }> = ({ f, askMood, hostMood, wave }) => (
+const duoHidden = (f: number) => (f > F.day11 + 8 && f < F.allnight - 14) || (f > F.fourteen - 10 && f < F.dangerous - 14);
+const Duo: React.FC<{ f: number; askMood?: "happy" | "neutral" | "surprised"; hostMood?: "happy" | "neutral" | "surprised"; wave?: boolean }> = ({ f, askMood, hostMood, wave }) => duoHidden(f) ? null : (
   <g>
     <g transform="translate(290 1480) scale(0.98)"><Person d={CODER} f={f} seed={24} talk={askTalk(f)} wave={wave ? 1 : 0} mood={askMood ?? (speaking(f, "asker", SPK) ? "surprised" : "neutral")} /></g>
     <g transform="translate(800 1480) scale(0.98)"><Person d={SCI} f={f} seed={0} talk={hostTalk(f)} wave={wave ? 1 : 0} mood={hostMood ?? "neutral"} /></g>
@@ -384,7 +385,7 @@ const S10_Recover: React.FC<{ f: number }> = ({ f }) => {
         )}
         {showBook && <RecordBook f={f} />}
       </Screen>
-      {showBook && f >= F.accepting && <Stamp f={f} at={F.accepting} x={540} y={570} text="NO LONGER ACCEPTED" hue={RED} fs={28} rot={-8} />}
+      {showBook && f >= F.accepting && <Stamp f={f} at={F.accepting} x={540} y={570} text="NOT ACCEPTED" hue={RED} fs={34} rot={-8} />}
       <Duo f={f} />
       {f >= F.dangerous && <Chip x={540} y={940} w={480} label="TOO DANGEROUS" hue={RED} p={pop(f, F.dangerous, 10)} fs={42} />}
       <Bubble f={f} x={290} y={900} labels={ASKL} />
