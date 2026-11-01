@@ -83,3 +83,11 @@ Old scheduled posts were cancelled and re-created with thumbnail_url (Postsiva Y
 | Nov 28 | 821dbe1c-747d-4c21-95b8-9561128bcc5f |
 | Nov 29 | e83de05a-273f-4324-9807-7b948147792c |
 | Nov 30 | 99bbff44-cdff-407b-bd2e-30793e049001 |
+
+## Nov 1 2026 (12:35 PKT): Nov 1–5 moved to native YouTube scheduling
+Uploaded as private with publishAt via schedule_with="youtube" (thumbnail applied); Postsiva-scheduled copies cancelled. Nov 6–30 still Postsiva-scheduled pending Uzair's check.
+- Nov 01: https://youtu.be/Z3H_0tvyWxM
+- Nov 02: https://youtu.be/ogfzY2W5D6Y
+- Nov 03: https://youtu.be/EVypnONS0ko
+- Nov 04: https://youtu.be/ES5kv8DuxXc
+- Nov 05: https://youtu.be/dw9ZroSyHzY
